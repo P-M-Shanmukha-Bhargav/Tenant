@@ -1,0 +1,41 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [COM] (Schema)
+       [ROM] (Schema)
+       [TRX] (Schema)
+       [USR] (Schema)
+       [COM].[ComplaintStatus] (Table)
+       [COM].[PaymentOptions] (Table)
+       [COM].[PaymentStatus] (Table)
+       [COM].[RoomSizeType] (Table)
+       [COM].[RoomType] (Table)
+       [ROM].[TenantRoomDetails] (Table)
+       [ROM].[Complaints] (Table)
+       [ROM].[Rooms] (Table)
+       [TRX].[TransactionBills] (Table)
+       [USR].[Owners] (Table)
+       [USR].[Tenants] (Table)
+       [ROM].[FK_Tenant_Id] (Foreign Key)
+       [ROM].[FK_Room_Id] (Foreign Key)
+       [ROM].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [ROM].[FK_Complaint_Status] (Foreign Key)
+       [ROM].[FK_Owner_Id] (Foreign Key)
+       [ROM].[FK_Room_Size_Type] (Foreign Key)
+       [ROM].[FK_Room_Type] (Foreign Key)
+       [TRX].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [TRX].[FK_Payment_Status_Id] (Foreign Key)
+       [TRX].[FK_Paid_Options] (Foreign Key)
+       [USR].[CHK_Owner_UId] (Check Constraint)
+       [USR].[CHK_Tenant_UId] (Check Constraint)
+
+** Supporting actions

@@ -1,0 +1,35 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [TRX].[TransactionAmount]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [TRX].[TransactionAmount].[PreviousAmount] is being dropped, data loss could occur.
+       The column [TRX].[TransactionAmount].[OtherAmount] on table [TRX].[TransactionAmount] must be added, but the column has
+         no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid
+         this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation
+         of smart-defaults as a deployment option.
+
+** User actions
+     Table rebuild
+       [TRX].[TransactionAmount] (Table)
+     Alter
+       [TRX].[GetTenantTransactionByUIdAndMonthYear_V1] (Procedure)
+     Create
+       [TRX].[InsertTransactionDetails_V1] (Procedure)
+
+** Supporting actions
+     Drop
+       [TRX].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [TRX].[FK_Transaction_Amount_Id] (Foreign Key)
+     Create
+       [TRX].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [TRX].[FK_Transaction_Amount_Id] (Foreign Key)
+     Refresh
+       [TRX].[GetTenantMonthYearTransactionByUId_V1] (Procedure)
+
+The column [TRX].[TransactionAmount].[PreviousAmount] is being dropped, data loss could occur.
+The column [TRX].[TransactionAmount].[OtherAmount] on table [TRX].[TransactionAmount] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+

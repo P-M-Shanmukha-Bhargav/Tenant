@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [TRX].[TransactionAmount] (Table)
+       [TRX].[TransactionBills] (Table)
+       [TRX].[TransactionPayment] (Table)
+       [TRX].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [TRX].[FK_Transaction_Amount_Id] (Foreign Key)
+       [TRX].[FK_Payment_Status_Id] (Foreign Key)
+       [TRX].[FK_Paid_Options] (Foreign Key)
+
+** Supporting actions

@@ -1,0 +1,122 @@
+<div nz-row>
+    <div nz-col [nzSpan]="24" *ngIf="screenInfo == 'signIn'">
+      <nz-card [nzBorderless]="true">
+        <div class="center">
+            <form nz-form [formGroup]="loginValidate" class="login-form">
+                <nz-form-item>
+                  <nz-form-control nzHasFeedback nzErrorTip="Enter Valid Email Address">
+                    <nz-input-group nzPrefixIcon="user">
+                      <input type="text" nz-input formControlName="emailid" placeholder="Email Address" />
+                    </nz-input-group>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-control nzHasFeedback nzErrorTip="Enter Valid Password">
+                    <nz-input-group nzPrefixIcon="lock">
+                      <input type="password" nz-input formControlName="password" placeholder="Password" />
+                    </nz-input-group>
+                  </nz-form-control>
+                </nz-form-item>
+            </form>
+        </div>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="24" *ngIf="screenInfo == 'signUp'">
+      <div *ngIf="registerScreenInfo == 'select'">
+        <nz-card>
+          <div nz-card-grid [ngStyle]="gridStyle" (click)="setRegisterScreen('owner')">Are you Owner</div>
+          <div nz-card-grid [ngStyle]="gridStyle" (click)="setRegisterScreen('tenant')">Are you Tenant</div>
+        </nz-card>
+      </div>
+      <div *ngIf="registerScreenInfo != 'select'" class="backPointer" (click)="backToScreen()">
+        <span nz-icon nzType="caret-left" nzTheme="fill"></span>
+        <span>Back</span>
+      </div>
+      <div *ngIf="registerScreenInfo == 'owner'">
+        <nz-card [nzBorderless]="true">
+          <div class="center">
+              <form nz-form [formGroup]="registerValidate" class="login-form">
+                  <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Name!">
+                      <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="displayName" placeholder="Display Name" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Phone Number!">
+                      <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="phoneNumber" placeholder="Phone Number" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your UPI Id!">
+                      <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="upiId" placeholder="UPI Id" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Email Address!">
+                      <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="emailid" placeholder="Email Address" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Password!">
+                      <nz-input-group nzPrefixIcon="lock">
+                        <input type="password" nz-input formControlName="password" placeholder="Password" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+              </form>
+          </div>
+        </nz-card>
+      </div>
+      <div *ngIf="registerScreenInfo == 'tenant'"> 
+        <nz-card [nzBorderless]="true">
+          <div class="center">
+              <form nz-form [formGroup]="registerValidate" class="login-form">
+                  <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Name!">
+                      <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="displayName" placeholder="Display Name" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Phone Number!">
+                      <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="phoneNumber" placeholder="Phone Number" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Aadhar Number!">
+                      <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="aadharNumber" placeholder="Aadhar Number" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Email Address!">
+                      <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="emailid" placeholder="Email Address" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Password!">
+                      <nz-input-group nzPrefixIcon="lock">
+                        <input type="password" nz-input formControlName="password" placeholder="Password" />
+                      </nz-input-group>
+                    </nz-form-control>
+                  </nz-form-item>
+              </form>
+          </div>
+        </nz-card>
+      </div>
+    </div>
+</div>

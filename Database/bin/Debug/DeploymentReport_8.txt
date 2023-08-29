@@ -1,0 +1,70 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [ROM].[TenantRoomDetails]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column MaintenanceAmount in table [ROM].[Rooms] is currently  INT NOT NULL but is being changed to  DECIMAL
+         (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with
+         type  DECIMAL (10, 2) NOT NULL.
+       The type for column RentAmount in table [ROM].[Rooms] is currently  INT NOT NULL but is being changed to  DECIMAL (10,
+         2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type 
+         DECIMAL (10, 2) NOT NULL.
+       The column [ROM].[TenantRoomDetails].[ExitApproved] on table [ROM].[TenantRoomDetails] must be added, but the column has
+         no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid
+         this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation
+         of smart-defaults as a deployment option.
+       The type for column AdvancePaidDate in table [ROM].[TenantRoomDetails] is currently  INT NOT NULL but is being changed
+         to  DATETIME NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible
+         with type  DATETIME NOT NULL.
+       The type for column AdvancePendingAmount in table [ROM].[TenantRoomDetails] is currently  INT NOT NULL but is being
+         changed to  DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is
+         incompatible with type  DECIMAL (10, 2) NOT NULL.
+       The type for column PowerAmount in table [TRX].[TransactionAmount] is currently  INT NOT NULL but is being changed to 
+         DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible
+         with type  DECIMAL (10, 2) NOT NULL.
+       The type for column PreviousAmount in table [TRX].[TransactionAmount] is currently  INT NOT NULL but is being changed to
+          DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is
+         incompatible with type  DECIMAL (10, 2) NOT NULL.
+       The type for column WaterAmount in table [TRX].[TransactionAmount] is currently  INT NOT NULL but is being changed to 
+         DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible
+         with type  DECIMAL (10, 2) NOT NULL.
+       The type for column PendingAmount in table [TRX].[TransactionBills] is currently  INT NOT NULL but is being changed to 
+         DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible
+         with type  DECIMAL (10, 2) NOT NULL.
+
+** User actions
+     Alter
+       [ROM].[Rooms] (Table)
+       [TRX].[TransactionAmount] (Table)
+       [TRX].[TransactionBills] (Table)
+     Table rebuild
+       [ROM].[TenantRoomDetails] (Table)
+     Create
+       [ROM].[InsertTenantRoomDetails_V1] (Procedure)
+       [ROM].[UpdateTeantRoomExitDetails_V1] (Procedure)
+       [TRX].[GetTenantMonthYearTransactionByUId_V1] (Procedure)
+       [TRX].[GetTenantTransactionByUIdAndMonthYear_V1] (Procedure)
+
+** Supporting actions
+     Drop
+       [ROM].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [TRX].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [ROM].[FK_Room_Id] (Foreign Key)
+     Create
+       [ROM].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [TRX].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [ROM].[FK_Room_Id] (Foreign Key)
+
+The type for column MaintenanceAmount in table [ROM].[Rooms] is currently  INT NOT NULL but is being changed to  DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  DECIMAL (10, 2) NOT NULL.
+The type for column RentAmount in table [ROM].[Rooms] is currently  INT NOT NULL but is being changed to  DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  DECIMAL (10, 2) NOT NULL.
+The column [ROM].[TenantRoomDetails].[ExitApproved] on table [ROM].[TenantRoomDetails] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The type for column AdvancePaidDate in table [ROM].[TenantRoomDetails] is currently  INT NOT NULL but is being changed to  DATETIME NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  DATETIME NOT NULL.
+The type for column AdvancePendingAmount in table [ROM].[TenantRoomDetails] is currently  INT NOT NULL but is being changed to  DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  DECIMAL (10, 2) NOT NULL.
+The type for column PowerAmount in table [TRX].[TransactionAmount] is currently  INT NOT NULL but is being changed to  DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  DECIMAL (10, 2) NOT NULL.
+The type for column PreviousAmount in table [TRX].[TransactionAmount] is currently  INT NOT NULL but is being changed to  DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  DECIMAL (10, 2) NOT NULL.
+The type for column WaterAmount in table [TRX].[TransactionAmount] is currently  INT NOT NULL but is being changed to  DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  DECIMAL (10, 2) NOT NULL.
+The type for column PendingAmount in table [TRX].[TransactionBills] is currently  INT NOT NULL but is being changed to  DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  DECIMAL (10, 2) NOT NULL.
+

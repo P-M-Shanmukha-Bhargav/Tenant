@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Alter
+       [ROM].[Rooms] (Table)
+     Create
+       [ROM].[InsertRoomDetails_V1] (Procedure)
+
+** Supporting actions
+     Refresh
+       [ROM].[UpdateTeantRoomExitDetails_V1] (Procedure)
+       [TRX].[GetTenantTransactionByUIdAndMonthYear_V1] (Procedure)

@@ -1,0 +1,44 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [COM] (Schema)
+       [DML] (Schema)
+       [ROM] (Schema)
+       [TRX] (Schema)
+       [USR] (Schema)
+       [COM].[ComplaintStatus] (Table)
+       [COM].[PaymentOptions] (Table)
+       [COM].[PaymentStatus] (Table)
+       [COM].[RoomSizeType] (Table)
+       [COM].[RoomType] (Table)
+       [ROM].[Complaints] (Table)
+       [ROM].[TenantRoomDetails] (Table)
+       [ROM].[Rooms] (Table)
+       [TRX].[TransactionBills] (Table)
+       [TRX].[TransactionAmount] (Table)
+       [ROM].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [ROM].[FK_Complaint_Status] (Foreign Key)
+       [ROM].[FK_Room_Id] (Foreign Key)
+       [ROM].[FK_Room_Size_Type] (Foreign Key)
+       [ROM].[FK_Room_Type] (Foreign Key)
+       [TRX].[FK_Transaction_Amount_Id] (Foreign Key)
+       [TRX].[FK_Payment_Status_Id] (Foreign Key)
+       [TRX].[FK_Paid_Options] (Foreign Key)
+       [TRX].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [DML].[Merge_COM.ComplaintStatus] (Procedure)
+       [DML].[Merge_COM.PaymentStatus] (Procedure)
+       [DML].[Merge_COM.RoomSizeType] (Procedure)
+       [DML].[Merge_COM.PaymentOptions] (Procedure)
+       [DML].[Merge_COM.RoomType] (Procedure)
+       [DML].[Merge_RunAllScripts] (Procedure)
+
+** Supporting actions

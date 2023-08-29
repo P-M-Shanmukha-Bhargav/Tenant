@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [USR].[UserData] (Table)
+       [USR].[UserDetails] (Table)
+       [USR].[UserTokens] (Table)
+       [USR].[FK_User_Id] (Foreign Key)
+       [USR].[GetUserDetailsByEmail] (Procedure)
+       [USR].[GetUserDetailsByRefreshToken] (Procedure)
+       [USR].[InsertUserData] (Procedure)
+       [USR].[InsertUserTokens] (Procedure)
+       [USR].[IsEmailOrMobileExists] (Procedure)
+     Alter
+       [TRX].[GetTenantTransactionByUIdAndMonthYear_V1] (Procedure)
+
+** Supporting actions

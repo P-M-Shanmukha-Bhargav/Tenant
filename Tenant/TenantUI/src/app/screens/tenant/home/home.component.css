@@ -1,0 +1,13 @@
+.ant-list-bordered{
+    border: none !important;
+}
+.inner-box {
+  margin: 0 8px;
+}
+.example {
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  margin: 20px 0;
+}

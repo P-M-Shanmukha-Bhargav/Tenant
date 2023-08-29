@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [ROM].[RoomAddress]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [ROM].[RoomAddress] (Table)
+
+** Supporting actions
+     Drop
+       [ROM].[FK_Rooms_Id] (Foreign Key)
+     Create
+       [ROM].[FK_Rooms_Id] (Foreign Key)
+     Refresh
+       [ROM].[InsertRoomAddress_V1] (Procedure)

@@ -1,0 +1,40 @@
+<div *ngIf="tenantData != undefined">
+    <nz-list [nzBordered]="true">
+        <nz-list-item nz-row nzJustify="space-between">
+            <span nz-typography>Amount to be Paid: &#8377; <b>{{tenantData.totalAmount}}.00</b>
+                &nbsp;&nbsp;<span nz-icon nzType="info-circle" nzTheme="outline"
+                nz-popover nzPopoverTitle="Details" [nzPopoverContent]="contentTemplate"
+                nzPopoverPlacement="bottom"></span>
+            </span>
+            <button nz-button nzSize="default" nzType="link" 
+                (click)="makePayment()" *ngIf="!tenantData.isAmountPaid">Pay Bill Now</button>
+            <span *ngIf="tenantData.isAmountPaid">Paid</span>
+        </nz-list-item>
+        <ng-template #contentTemplate>
+          <div>
+            <p>Rent Amount: {{tenantData.rentAmount}}</p>
+            <p>Maintenance Amount: {{tenantData.maintenanceAmount}}</p>
+            <p>Power Amount: {{tenantData.powerAmount}}</p>
+            <p>Water Amount: {{tenantData.waterAmount}}</p>
+            <p>Other Amount: {{tenantData.otherAmount}}</p>
+            <p>Pending Amount: {{tenantData.pendingAmount}}</p>
+          </div>
+        </ng-template>
+    </nz-list>
+    <div nz-row>
+        <div nz-col [nzSpan]="12">
+            <nz-card nzHoverable>
+                <span>Add Complaint <span nz-icon nzType="plus" nzTheme="outline"></span></span>
+            </nz-card>
+        </div>
+        <div nz-col [nzSpan]="12">
+            <nz-card nzHoverable (click)="navigateToHistoryList()">
+                <span>Payment History <span nz-icon nzType="credit-card" nzTheme="outline"></span></span>
+            </nz-card>
+        </div>
+    </div>
+</div>
+<div id="showButton"></div>
+<div *ngIf="tenantData == undefined" class="example">
+    <nz-spin nzSimple></nz-spin>
+</div>

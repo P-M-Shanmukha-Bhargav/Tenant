@@ -1,0 +1,43 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [ROM].[Complaints]
+       [ROM].[TenantRoomDetails]
+       [TRX].[TransactionAmount]
+       [USR].[Owners]
+       [USR].[Tenants]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [ROM].[Complaints] (Table)
+       [ROM].[TenantRoomDetails] (Table)
+       [TRX].[TransactionAmount] (Table)
+       [USR].[Owners] (Table)
+       [USR].[Tenants] (Table)
+
+** Supporting actions
+     Drop
+       [ROM].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [ROM].[FK_Complaint_Status] (Foreign Key)
+       [ROM].[FK_Tenant_Id] (Foreign Key)
+       [ROM].[FK_Room_Id] (Foreign Key)
+       [TRX].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [TRX].[FK_Transaction_Amount_Id] (Foreign Key)
+       [ROM].[FK_Owner_Id] (Foreign Key)
+     Create
+       [ROM].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [ROM].[FK_Complaint_Status] (Foreign Key)
+       [ROM].[FK_Tenant_Id] (Foreign Key)
+       [ROM].[FK_Room_Id] (Foreign Key)
+       [TRX].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [TRX].[FK_Transaction_Amount_Id] (Foreign Key)
+       [ROM].[FK_Owner_Id] (Foreign Key)
+       [USR].[CHK_Owner_UId] (Check Constraint)
+       [USR].[CHK_Tenant_UId] (Check Constraint)
+     Refresh
+       [USR].[InsertTenant_V1] (Procedure)

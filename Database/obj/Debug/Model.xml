@@ -1,0 +1,5998 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="HouseAppDb.dll" />
+			<Metadata Name="FileName" Value="C:\MY STUFF\PROJECTS\TENANTAPP\DATABASE\OBJ\DEBUG\HOUSEAPPDB.DLL" />
+			<Metadata Name="AssemblyName" Value="HouseAppDb" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\My Stuff\Projects\TenantApp\Database\obj\Debug\HouseAppDb.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[TRX].[TransactionPayment].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[TRX].[TransactionPayment]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlUniqueConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[USR].[UserData].[EmailId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[USR].[UserData]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlUniqueConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[USR].[UserData].[MobileNumber]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[USR].[UserData]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlSchema" Name="[COM]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[COM].[ComplaintStatus]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[ComplaintStatus].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[ComplaintStatus].[Code]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[ComplaintStatus].[Description]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[ComplaintStatus].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[ComplaintStatus].[UpdatedDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[ComplaintStatus].[UpdatedBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[COM]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlTable" Name="[COM].[PaymentOptions]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentOptions].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentOptions].[Code]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentOptions].[Description]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentOptions].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentOptions].[UpdatedDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentOptions].[UpdatedBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[COM]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+		</Element>
+		<Element Type="SqlTable" Name="[COM].[PaymentStatus]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentStatus].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentStatus].[Code]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentStatus].[Description]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentStatus].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentStatus].[UpdatedDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[PaymentStatus].[UpdatedBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[COM]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[COM].[PK_Complaint_Status_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[COM].[ComplaintStatus].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[COM].[ComplaintStatus]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="6" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[COM].[PK_Payment_Options_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[COM].[PaymentOptions].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[COM].[PaymentOptions]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="7" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[COM].[PK_Payment_Status_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[COM].[PaymentStatus].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[COM].[PaymentStatus]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="8" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[COM].[PK_Room_Size_Type_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[COM].[RoomSizeType].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[COM].[RoomSizeType]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[COM].[PK_Room_Type_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[COM].[RoomType].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[COM].[RoomType]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+		</Element>
+		<Element Type="SqlTable" Name="[COM].[RoomSizeType]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomSizeType].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomSizeType].[Code]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomSizeType].[Description]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomSizeType].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomSizeType].[UpdatedDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomSizeType].[UpdatedBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[COM]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="9" />
+		</Element>
+		<Element Type="SqlTable" Name="[COM].[RoomType]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomType].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomType].[Code]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomType].[Description]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomType].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomType].[UpdatedDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[COM].[RoomType].[UpdatedBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[COM]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="10" />
+		</Element>
+		<Element Type="SqlSchema" Name="[DML]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[DML].[Merge_COM.ComplaintStatus]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+ BEGIN
+SET NOCOUNT ON
+
+/*Initalized
+Modified By - Shanmukh
+Modified Date - 2023-07-18*/ 
+
+MERGE INTO [COM].[ComplaintStatus] AS Target
+USING (VALUES
+
+(1,'PEND', 'Pending', 1, GETDATE(), NULL)
+
+
+) AS Source ([Id],[Code],[Description],[IsActive],[UpdatedDate],[UpdatedBy])
+ON (Target.[Id] = Source.[Id])
+WHEN MATCHED AND (Target.[Code] <> Source.[Code] OR Target.[Description] <> Source.[Description] OR Target.[IsActive] <> Source.[IsActive] OR Target.[UpdatedDate] <> Source.[UpdatedDate] OR Target.[UpdatedBy] <> Source.[UpdatedBy]) THEN
+ UPDATE SET
+ [Code] = Source.[Code], 
+ [Description] = Source.[Description],
+ [IsActive] = Source.[IsActive],
+ [UpdatedDate] = Source.[UpdatedDate], 
+ [UpdatedBy] = Source.[UpdatedBy]
+WHEN NOT MATCHED BY TARGET THEN
+ INSERT([Id],[Code],[Description],[IsActive],[UpdatedDate],[UpdatedBy])
+ VALUES(Source.[Id],Source.[Code],Source.[Description],Source.[IsActive],Source.[UpdatedDate],Source.[UpdatedBy])
+--WHEN NOT MATCHED BY SOURCE THEN 
+-- DELETE
+;
+ 
+DECLARE @mergeError int
+ , @mergeCount int
+SELECT @mergeError = @@ERROR, @mergeCount = @@ROWCOUNT
+IF @mergeError != 0
+ BEGIN
+ PRINT 'ERROR OCCURRED IN MERGE FOR [COM].[ComplaintStatus]. Rows affected: ' + CAST(@mergeCount AS nvarchar(100)); -- SQL should always return zero rows affected
+ END
+ELSE
+ BEGIN
+ PRINT '[COM].[ComplaintStatus] rows affected by MERGE: ' + CAST(@mergeCount AS nvarchar(100));
+ END
+ 
+SET NOCOUNT OFF
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[ComplaintStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[Id]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[Code]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[Description]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[IsActive]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[UpdatedDate]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[UpdatedBy]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[Code]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[Id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[DML]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1516" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [DML].[Merge_COM.ComplaintStatus]&#xD;&#xA; AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[DML].[Merge_COM.PaymentOptions]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+ BEGIN
+SET NOCOUNT ON
+
+/*Initalized
+Modified By - Shanmukh
+Modified Date - 2023-07-18*/ 
+
+MERGE INTO [COM].[PaymentOptions] AS Target
+USING (VALUES
+
+(1,'CASH', 'Cash Payment', 1, GETDATE(), NULL),
+(2,'UPI', 'Upi Payment', 1, GETDATE(), NULL),
+(3,'BANK', 'Bank Transfer', 1, GETDATE(), NULL)
+
+
+) AS Source ([Id],[Code],[Description],[IsActive],[UpdatedDate],[UpdatedBy])
+ON (Target.[Id] = Source.[Id])
+WHEN MATCHED AND (Target.[Code] <> Source.[Code] OR Target.[Description] <> Source.[Description] OR Target.[IsActive] <> Source.[IsActive] OR Target.[UpdatedDate] <> Source.[UpdatedDate] OR Target.[UpdatedBy] <> Source.[UpdatedBy]) THEN
+ UPDATE SET
+ [Code] = Source.[Code], 
+ [Description] = Source.[Description],
+ [IsActive] = Source.[IsActive],
+ [UpdatedDate] = Source.[UpdatedDate], 
+ [UpdatedBy] = Source.[UpdatedBy]
+WHEN NOT MATCHED BY TARGET THEN
+ INSERT([Id],[Code],[Description],[IsActive],[UpdatedDate],[UpdatedBy])
+ VALUES(Source.[Id],Source.[Code],Source.[Description],Source.[IsActive],Source.[UpdatedDate],Source.[UpdatedBy])
+--WHEN NOT MATCHED BY SOURCE THEN 
+-- DELETE
+;
+ 
+DECLARE @mergeError int
+ , @mergeCount int
+SELECT @mergeError = @@ERROR, @mergeCount = @@ROWCOUNT
+IF @mergeError != 0
+ BEGIN
+ PRINT 'ERROR OCCURRED IN MERGE FOR [COM].[PaymentOptions]. Rows affected: ' + CAST(@mergeCount AS nvarchar(100)); -- SQL should always return zero rows affected
+ END
+ELSE
+ BEGIN
+ PRINT '[COM].[PaymentOptions] rows affected by MERGE: ' + CAST(@mergeCount AS nvarchar(100));
+ END
+ 
+SET NOCOUNT OFF
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentOptions]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[Id]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[Code]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[Description]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[IsActive]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[UpdatedDate]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[UpdatedBy]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[Code]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[Id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[DML]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1614" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [DML].[Merge_COM.PaymentOptions]&#xD;&#xA; AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[DML].[Merge_COM.PaymentStatus]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+ BEGIN
+SET NOCOUNT ON
+
+/*Initalized
+Modified By - Shanmukh
+Modified Date - 2023-07-18*/ 
+
+MERGE INTO [COM].[PaymentStatus] AS Target
+USING (VALUES
+
+(1,'PEND', 'Pending', 1, GETDATE(), NULL),
+(2,'INIT', 'Initiated', 1, GETDATE(), NULL),
+(3,'PAID', 'Payment Completed', 1, GETDATE(), NULL),
+(4,'PART', 'Partial Payment', 1, GETDATE(), NULL)
+
+
+) AS Source ([Id],[Code],[Description],[IsActive],[UpdatedDate],[UpdatedBy])
+ON (Target.[Id] = Source.[Id])
+WHEN MATCHED AND (Target.[Code] <> Source.[Code] OR Target.[Description] <> Source.[Description] OR Target.[IsActive] <> Source.[IsActive] OR Target.[UpdatedDate] <> Source.[UpdatedDate] OR Target.[UpdatedBy] <> Source.[UpdatedBy]) THEN
+ UPDATE SET
+ [Code] = Source.[Code], 
+ [Description] = Source.[Description],
+ [IsActive] = Source.[IsActive],
+ [UpdatedDate] = Source.[UpdatedDate], 
+ [UpdatedBy] = Source.[UpdatedBy]
+WHEN NOT MATCHED BY TARGET THEN
+ INSERT([Id],[Code],[Description],[IsActive],[UpdatedDate],[UpdatedBy])
+ VALUES(Source.[Id],Source.[Code],Source.[Description],Source.[IsActive],Source.[UpdatedDate],Source.[UpdatedBy])
+--WHEN NOT MATCHED BY SOURCE THEN 
+-- DELETE
+;
+ 
+DECLARE @mergeError int
+ , @mergeCount int
+SELECT @mergeError = @@ERROR, @mergeCount = @@ROWCOUNT
+IF @mergeError != 0
+ BEGIN
+ PRINT 'ERROR OCCURRED IN MERGE FOR [COM].[PaymentStatus]. Rows affected: ' + CAST(@mergeCount AS nvarchar(100)); -- SQL should always return zero rows affected
+ END
+ELSE
+ BEGIN
+ PRINT '[COM].[PaymentStatus] rows affected by MERGE: ' + CAST(@mergeCount AS nvarchar(100));
+ END
+ 
+SET NOCOUNT OFF
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[Id]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[Code]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[Description]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[IsActive]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[UpdatedDate]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[UpdatedBy]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[Code]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[Id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[DML]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1659" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [DML].[Merge_COM.PaymentStatus]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[DML].[Merge_COM.RoomSizeType]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+ BEGIN
+SET NOCOUNT ON
+
+/*Initalized
+Modified By - Shanmukh
+Modified Date - 2023-07-18*/ 
+
+MERGE INTO [COM].[RoomSizeType] AS Target
+USING (VALUES
+
+(1,'SFT', 'Sq. Feet', 1, GETDATE(), NULL)
+
+
+) AS Source ([Id],[Code],[Description],[IsActive],[UpdatedDate],[UpdatedBy])
+ON (Target.[Id] = Source.[Id])
+WHEN MATCHED AND (Target.[Code] <> Source.[Code] OR Target.[Description] <> Source.[Description] OR Target.[IsActive] <> Source.[IsActive] OR Target.[UpdatedDate] <> Source.[UpdatedDate] OR Target.[UpdatedBy] <> Source.[UpdatedBy]) THEN
+ UPDATE SET
+ [Code] = Source.[Code], 
+ [Description] = Source.[Description],
+ [IsActive] = Source.[IsActive],
+ [UpdatedDate] = Source.[UpdatedDate], 
+ [UpdatedBy] = Source.[UpdatedBy]
+WHEN NOT MATCHED BY TARGET THEN
+ INSERT([Id],[Code],[Description],[IsActive],[UpdatedDate],[UpdatedBy])
+ VALUES(Source.[Id],Source.[Code],Source.[Description],Source.[IsActive],Source.[UpdatedDate],Source.[UpdatedBy])
+--WHEN NOT MATCHED BY SOURCE THEN 
+-- DELETE
+;
+ 
+DECLARE @mergeError int
+ , @mergeCount int
+SELECT @mergeError = @@ERROR, @mergeCount = @@ROWCOUNT
+IF @mergeError != 0
+ BEGIN
+ PRINT 'ERROR OCCURRED IN MERGE FOR [COM].[RoomSizeType]. Rows affected: ' + CAST(@mergeCount AS nvarchar(100)); -- SQL should always return zero rows affected
+ END
+ELSE
+ BEGIN
+ PRINT '[COM].[RoomSizeType] rows affected by MERGE: ' + CAST(@mergeCount AS nvarchar(100));
+ END
+ 
+SET NOCOUNT OFF
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomSizeType]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[Id]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[Code]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[Description]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[IsActive]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[UpdatedDate]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[UpdatedBy]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[Code]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[Id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[DML]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1503" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [DML].[Merge_COM.RoomSizeType]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[DML].[Merge_COM.RoomType]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+ BEGIN
+SET NOCOUNT ON
+
+/*Initalized
+Modified By - Shanmukh
+Modified Date - 2023-07-18*/ 
+
+MERGE INTO [COM].[RoomType] AS Target
+USING (VALUES
+
+(1,'1BHK', '1 BHK', 1, GETDATE(), NULL),
+(2,'2BHK', '2 BHK', 1, GETDATE(), NULL),
+(3,'3BHK', '3 BHK', 1, GETDATE(), NULL)
+
+
+) AS Source ([Id],[Code],[Description],[IsActive],[UpdatedDate],[UpdatedBy])
+ON (Target.[Id] = Source.[Id])
+WHEN MATCHED AND (Target.[Code] <> Source.[Code] OR Target.[Description] <> Source.[Description] OR Target.[IsActive] <> Source.[IsActive] OR Target.[UpdatedDate] <> Source.[UpdatedDate] OR Target.[UpdatedBy] <> Source.[UpdatedBy]) THEN
+ UPDATE SET
+ [Code] = Source.[Code], 
+ [Description] = Source.[Description],
+ [IsActive] = Source.[IsActive],
+ [UpdatedDate] = Source.[UpdatedDate], 
+ [UpdatedBy] = Source.[UpdatedBy]
+WHEN NOT MATCHED BY TARGET THEN
+ INSERT([Id],[Code],[Description],[IsActive],[UpdatedDate],[UpdatedBy])
+ VALUES(Source.[Id],Source.[Code],Source.[Description],Source.[IsActive],Source.[UpdatedDate],Source.[UpdatedBy])
+--WHEN NOT MATCHED BY SOURCE THEN 
+-- DELETE
+;
+ 
+DECLARE @mergeError int
+ , @mergeCount int
+SELECT @mergeError = @@ERROR, @mergeCount = @@ROWCOUNT
+IF @mergeError != 0
+ BEGIN
+ PRINT 'ERROR OCCURRED IN MERGE FOR [COM].[RoomType]. Rows affected: ' + CAST(@mergeCount AS nvarchar(100)); -- SQL should always return zero rows affected
+ END
+ELSE
+ BEGIN
+ PRINT '[COM].[RoomType] rows affected by MERGE: ' + CAST(@mergeCount AS nvarchar(100));
+ END
+ 
+SET NOCOUNT OFF
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomType]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomType].[Id]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomType].[Code]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomType].[Description]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomType].[IsActive]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomType].[UpdatedDate]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomType].[UpdatedBy]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[COM].[RoomType].[Code]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomType].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomType].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomType].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomType].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[RoomType].[Id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[DML]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1569" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [DML].[Merge_COM.RoomType]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[DML].[Merge_RunAllScripts]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+
+     EXEC [DML].[Merge_COM.ComplaintStatus]
+	 PRINT 'Executed [DML].[Merge_COM.ComplaintStatus] successfully'
+	 
+     EXEC [DML].[Merge_COM.PaymentOptions]
+	 PRINT 'Executed [DML].[Merge_COM.PaymentOptions] successfully'
+	 
+     EXEC [DML].[Merge_COM.PaymentStatus]
+	 PRINT 'Executed [DML].[Merge_COM.PaymentStatus] successfully'
+	 
+     EXEC [DML].[Merge_COM.RoomSizeType]
+	 PRINT 'Executed [DML].[Merge_COM.RoomSizeType] successfully'
+	 
+     EXEC [DML].[Merge_COM.RoomType]
+	 PRINT 'Executed [DML].[Merge_COM.RoomType] successfully'
+
+RETURN 0]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[DML].[Merge_COM.ComplaintStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[DML].[Merge_COM.PaymentOptions]" />
+				</Entry>
+				<Entry>
+					<References Name="[DML].[Merge_COM.PaymentStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[DML].[Merge_COM.RoomSizeType]" />
+				</Entry>
+				<Entry>
+					<References Name="[DML].[Merge_COM.RoomType]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[DML]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="612" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [DML].[Merge_RunAllScripts]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlSchema" Name="[ROM]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[ROM].[Complaints]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Complaints].[ComplaintId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Complaints].[TenantRoomDetailsId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Complaints].[Title]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1000" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Complaints].[Description]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1000" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Complaints].[CreateDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Complaints].[UpdateDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Complaints].[ComplaintStatusId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Complaints].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Complaints].[UpdatedDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Complaints].[UpdatedBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[ROM]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[ROM].[FK_Complaint_Status]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[ROM].[Complaints].[ComplaintStatusId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[ROM].[Complaints]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[COM].[ComplaintStatus].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[COM].[ComplaintStatus]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="13" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[ROM].[FK_Room_Id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[RoomId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[ROM].[Rooms]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[ROM].[FK_Room_Size_Type]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomSizeTypeId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[ROM].[Rooms]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[COM].[RoomSizeType].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[COM].[RoomSizeType]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[ROM].[FK_Room_Type]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomTypeId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[ROM].[Rooms]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[COM].[RoomType].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[COM].[RoomType]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[ROM].[FK_Rooms_Id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[ROM].[RoomAddress].[RoomId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[ROM].[RoomAddress]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[ROM].[Rooms]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[ROM].[FK_Tenant_Room_Details_Id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[ROM].[Complaints].[TenantRoomDetailsId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[ROM].[Complaints]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantRoomDetailsId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="12" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[ROM].[GetRoomDetailsByRoomId_V1]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT TRD.TenantUId, TRD.IsAdvancePaid, TRD.RentedOn, R.IsRentOpen, R.IsForBachelor, R.IsOccupied,
+		R.MaintenanceAmount, R.RentAmount, R.AdvanceMoneyInMonths
+	FROM ROM.Rooms R
+	INNER JOIN ROM.TenantRoomDetails TRD ON TRD.RoomId = R.RoomId
+	WHERE R.RoomId = @RoomId AND R.IsActive = 1 AND TRD.IsActive = 1
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[ROM].[Rooms]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsAdvancePaid]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[RentedOn]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[IsRentOpen]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[IsForBachelor]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[IsOccupied]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[MaintenanceAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RentAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[AdvanceMoneyInMonths]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[GetRoomDetailsByRoomId_V1].[@RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[GetRoomDetailsByRoomId_V1].[@RoomId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[ROM]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="406" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [ROM].[GetRoomDetailsByRoomId_V1]&#xD;&#xA;&#x9;@RoomId UNIQUEIDENTIFIER&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[ROM].[GetTenantListForOwner_V1]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT TRD.TenantUId, R.RoomId, R.RoomNumber
+	FROM ROM.Rooms R
+	INNER JOIN ROM.TenantRoomDetails TRD ON TRD.RoomId = R.RoomId
+	WHERE R.OwnerUId = @OwnerUId AND R.IsActive = 1 AND TRD.IsActive = 1
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[ROM].[Rooms]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[OwnerUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[GetTenantListForOwner_V1].[@OwnerUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[GetTenantListForOwner_V1].[@OwnerUId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[ROM]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="292" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [ROM].[GetTenantListForOwner_V1]&#xD;&#xA;&#x9;@OwnerUId NVARCHAR(100)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[ROM].[InsertRoomAddress_V1]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+INSERT INTO [ROM].[RoomAddress]
+           ([RoomId]
+           ,[Address1]
+           ,[Address2]
+           ,[Address3]
+           ,[City]
+           ,[State]
+           ,[Zip]
+           ,[IsActive]
+           ,[UpdatedDate]
+           ,[UpdatedBy])
+     VALUES
+           (@RoomId
+           ,@Address1
+           ,@Address2
+           ,@Address3
+           ,@City
+           ,@State
+           ,@Zip
+           ,@IsActive
+           ,GETDATE()
+           ,@UpdatedBy)
+
+    SELECT @RoomAddressId = SCOPE_IDENTITY();
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[ROM].[RoomAddress]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[RoomAddress].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[RoomAddress].[Address1]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[RoomAddress].[Address2]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[RoomAddress].[Address3]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[RoomAddress].[City]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[RoomAddress].[State]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[RoomAddress].[Zip]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[RoomAddress].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[RoomAddress].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[RoomAddress].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomAddress_V1].[@RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomAddress_V1].[@Address1]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomAddress_V1].[@Address2]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomAddress_V1].[@Address3]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomAddress_V1].[@City]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomAddress_V1].[@State]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomAddress_V1].[@Zip]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomAddress_V1].[@IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomAddress_V1].[@UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomAddress_V1].[@RoomAddressId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomAddress_V1].[@RoomAddressId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomAddress_V1].[@RoomId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomAddress_V1].[@Address1]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomAddress_V1].[@Address2]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomAddress_V1].[@Address3]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomAddress_V1].[@City]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomAddress_V1].[@State]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomAddress_V1].[@Zip]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomAddress_V1].[@IsActive]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomAddress_V1].[@UpdatedBy]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[ROM]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="865" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [ROM].[InsertRoomAddress_V1]&#xD;&#xA;    @RoomAddressId INT OUTPUT,&#xD;&#xA;&#x9;@RoomId&#x9;UNIQUEIDENTIFIER,&#xD;&#xA;&#x9;@Address1 NVARCHAR(100),&#xD;&#xA;&#x9;@Address2 NVARCHAR(100),&#xD;&#xA;&#x9;@Address3 NVARCHAR(100),&#xD;&#xA;&#x9;@City NVARCHAR(100),&#xD;&#xA;&#x9;@State NVARCHAR(100),&#xD;&#xA;&#x9;@Zip NVARCHAR(100),&#xD;&#xA;    @IsActive BIT,&#xD;&#xA;    @UpdatedBy NVARCHAR(100)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[ROM].[InsertRoomDetails_V1]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+INSERT INTO [ROM].[Rooms]
+           ([RoomId]
+           ,[OwnerUId]
+           ,[AdvanceMoneyInMonths]
+           ,[IsForBachelor]
+           ,[IsRentOpen]
+           ,[IsOccupied]
+           ,[MaintenanceAmount]
+           ,[RoomNumber]
+           ,[RentAmount]
+           ,[RoomSize]
+           ,[RoomSizeTypeId]
+           ,[RoomTypeId]
+           ,[IsActive]
+           ,[UpdatedDate]
+           ,[UpdatedBy])
+     VALUES
+           (@RoomId
+           ,@OwnerUId
+           ,@AdvanceMoneyInMonths
+           ,@IsForBachelor
+           ,@IsRentOpen
+           ,@IsOccupied
+           ,@MaintenanceAmount
+           ,@RoomNumber
+           ,@RentAmount
+           ,@RoomSize
+           ,@RoomSizeTypeId
+           ,@RoomTypeId
+           ,@IsActive
+           ,GETDATE()
+           ,@UpdatedBy)
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[ROM].[Rooms]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[OwnerUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[AdvanceMoneyInMonths]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[IsForBachelor]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[IsRentOpen]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[IsOccupied]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[MaintenanceAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RentAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomSize]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomSizeTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@OwnerUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@AdvanceMoneyInMonths]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@IsForBachelor]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@IsRentOpen]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@IsOccupied]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@MaintenanceAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@RoomNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@RentAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@RoomSize]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@RoomSizeTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@RoomTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertRoomDetails_V1].[@UpdatedBy]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@RoomId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@OwnerUId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@AdvanceMoneyInMonths]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@IsForBachelor]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@IsRentOpen]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@IsOccupied]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@MaintenanceAmount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@RoomNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@RentAmount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@RoomSize]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@RoomSizeTypeId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@RoomTypeId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@IsActive]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertRoomDetails_V1].[@UpdatedBy]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[ROM]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1274" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [ROM].[InsertRoomDetails_V1]&#xD;&#xA;&#x9;@RoomId UNIQUEIDENTIFIER,&#xD;&#xA;    @OwnerUId NVARCHAR(100),&#xD;&#xA;    @AdvanceMoneyInMonths INT,&#xD;&#xA;    @IsForBachelor BIT,&#xD;&#xA;    @IsRentOpen BIT,&#xD;&#xA;    @IsOccupied BIT,&#xD;&#xA;    @MaintenanceAmount DECIMAL(10,2),&#xD;&#xA;    @RoomNumber NVARCHAR(100),&#xD;&#xA;    @RentAmount  DECIMAL(10,2),&#xD;&#xA;    @RoomSize INT,&#xD;&#xA;    @RoomSizeTypeId INT,&#xD;&#xA;    @RoomTypeId INT,&#xD;&#xA;    @IsActive BIT,&#xD;&#xA;    @UpdatedBy NVARCHAR(100)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[ROM].[InsertTenantRoomDetails_V1]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+INSERT INTO [ROM].[TenantRoomDetails]
+           ([TenantUId]
+           ,[RoomId]
+           ,[IsAdvancePaid]
+           ,[AdvancePaidDate]
+           ,[AdvancePendingAmount]
+           ,[RentPaidDate]
+           ,[RentedOn]
+           ,[ExitRequestedOn]
+           ,[ExitApproved]
+           ,[IsBillsOwnerControl]
+           ,[IsActive]
+           ,[UpdatedDate]
+           ,[UpdatedBy])
+     VALUES
+           (@TenantUId
+           ,@RoomId
+           ,@IsAdvancePaid
+           ,@AdvancePaidDate
+           ,@AdvancePendingAmount
+           ,@RentPaidDate
+           ,@RentedOn
+           ,NULL
+           ,0
+           ,@IsBillsOwnerControl
+           ,@IsActive
+           ,GETDATE()
+           ,@UpdatedBy)
+
+    SELECT @TenantRoomDetailsId = SCOPE_IDENTITY();
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsAdvancePaid]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[AdvancePaidDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[AdvancePendingAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[RentPaidDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[RentedOn]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[ExitRequestedOn]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[ExitApproved]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsBillsOwnerControl]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertTenantRoomDetails_V1].[@TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertTenantRoomDetails_V1].[@RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertTenantRoomDetails_V1].[@IsAdvancePaid]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertTenantRoomDetails_V1].[@AdvancePaidDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertTenantRoomDetails_V1].[@AdvancePendingAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertTenantRoomDetails_V1].[@RentPaidDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertTenantRoomDetails_V1].[@RentedOn]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertTenantRoomDetails_V1].[@IsBillsOwnerControl]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertTenantRoomDetails_V1].[@IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertTenantRoomDetails_V1].[@UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[InsertTenantRoomDetails_V1].[@TenantRoomDetailsId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertTenantRoomDetails_V1].[@TenantRoomDetailsId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertTenantRoomDetails_V1].[@TenantUId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertTenantRoomDetails_V1].[@RoomId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertTenantRoomDetails_V1].[@IsAdvancePaid]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertTenantRoomDetails_V1].[@AdvancePaidDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertTenantRoomDetails_V1].[@AdvancePendingAmount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertTenantRoomDetails_V1].[@RentPaidDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertTenantRoomDetails_V1].[@RentedOn]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertTenantRoomDetails_V1].[@IsBillsOwnerControl]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertTenantRoomDetails_V1].[@IsActive]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[InsertTenantRoomDetails_V1].[@UpdatedBy]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[ROM]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1168" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [ROM].[InsertTenantRoomDetails_V1]&#xD;&#xA;    @TenantRoomDetailsId INT OUTPUT,&#xD;&#xA;&#x9;@TenantUId NVARCHAR(100),&#xD;&#xA;&#x9;@RoomId UNIQUEIDENTIFIER,&#xD;&#xA;&#x9;@IsAdvancePaid BIT,&#xD;&#xA;&#x9;@AdvancePaidDate DATETIME,&#xD;&#xA;&#x9;@AdvancePendingAmount DECIMAL(10,2),&#xD;&#xA;&#x9;@RentPaidDate INT,&#xD;&#xA;&#x9;@RentedOn DATETIME,&#xD;&#xA;    @IsBillsOwnerControl BIT,&#xD;&#xA;&#x9;@IsActive BIT,&#xD;&#xA;&#x9;@UpdatedBy NVARCHAR(100)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[ROM].[PK_Complaint_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[ROM].[Complaints].[ComplaintId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[ROM].[Complaints]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="11" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[ROM].[PK_Room_Address_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[ROM].[RoomAddress].[RoomAddressId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[ROM].[RoomAddress]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[ROM].[PK_Room_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[ROM].[Rooms].[RoomId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[ROM].[Rooms]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[ROM].[PK_Tenant_Room_Details_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[ROM].[TenantRoomDetails].[TenantRoomDetailsId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+		</Element>
+		<Element Type="SqlTable" Name="[ROM].[RoomAddress]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[RoomAddress].[RoomAddressId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[RoomAddress].[RoomId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[RoomAddress].[Address1]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[RoomAddress].[Address2]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[RoomAddress].[Address3]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[RoomAddress].[City]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[RoomAddress].[State]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[RoomAddress].[Zip]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[RoomAddress].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[RoomAddress].[UpdatedDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[RoomAddress].[UpdatedBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[ROM]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="18" />
+			<AttachedAnnotation Disambiguator="17" />
+		</Element>
+		<Element Type="SqlTable" Name="[ROM].[Rooms]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[RoomId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[OwnerUId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[AdvanceMoneyInMonths]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[IsForBachelor]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[IsRentOpen]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[IsOccupied]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[MaintenanceAmount]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[RoomNumber]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[RentAmount]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[RoomSize]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[RoomSizeTypeId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[RoomTypeId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[UpdatedDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[Rooms].[UpdatedBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[ROM]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="19" />
+			<AttachedAnnotation Disambiguator="15" />
+			<AttachedAnnotation Disambiguator="16" />
+		</Element>
+		<Element Type="SqlTable" Name="[ROM].[TenantRoomDetails]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[TenantRoomDetailsId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[TenantUId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[RoomId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[IsAdvancePaid]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[AdvancePaidDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[AdvancePendingAmount]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[RentPaidDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[RentedOn]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[ExitRequestedOn]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[ExitApproved]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[IsBillsOwnerControl]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[UpdatedDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[ROM].[TenantRoomDetails].[UpdatedBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[ROM]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="20" />
+			<AttachedAnnotation Disambiguator="14" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[ROM].[UpdateTeantRoomExitDetails_V1]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	DECLARE @months INT
+	SELECT @months = R.AdvanceMoneyInMonths FROM ROM.Rooms R
+	INNER JOIN ROM.TenantRoomDetails TRD ON TRD.RoomId = R.RoomId
+	WHERE TRD.TenantUId = @TenantId and TRD.IsActive = 1
+
+	UPDATE ROM.TenantRoomDetails
+	SET ExitRequestedOn = GETDATE(), ExitApproved = 0, 
+	UpdatedDate = GETDATE(), UpdatedBy = @TenantId
+	WHERE TenantUId = @TenantId and IsActive = 1
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[AdvanceMoneyInMonths]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[UpdateTeantRoomExitDetails_V1].[@TenantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[ExitRequestedOn]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[ExitApproved]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[ROM].[UpdateTeantRoomExitDetails_V1].[@TenantId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[ROM]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="479" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [ROM].[UpdateTeantRoomExitDetails_V1]&#xD;&#xA;&#x9;@TenantId NVARCHAR(100)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlSchema" Name="[TRX]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[TRX].[FK_Paid_Options]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaidOptionsId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[TRX].[TransactionBills]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[COM].[PaymentOptions]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[TRX].[FK_Payment_Status_Id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaymentStatusId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[TRX].[TransactionBills]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[Id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[COM].[PaymentStatus]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[TRX].[FK_Tenant_Room_Details_Id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TenantRoomDetailsId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[TRX].[TransactionAmount]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantRoomDetailsId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[TRX].[FK_Transaction_Amount_Id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[TransactionAmountId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[TRX].[TransactionBills]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TransactionAmountId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[TRX].[TransactionAmount]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[TRX].[GetTenantMonthYearTransactionByUId_V1]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT 
+		BillMonth, 
+		BillYear
+	FROM TRX.TransactionAmount TA
+	INNER JOIN ROM.TenantRoomDetails TRD ON TRD.TenantRoomDetailsId = TA.TenantRoomDetailsId
+	WHERE TRD.TenantUId = @TenantUID AND TRD.IsActive = 1
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[TRX].[TransactionAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[GetTenantMonthYearTransactionByUId_V1].[@TenantUID]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[GetTenantMonthYearTransactionByUId_V1].[@TenantUID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[TRX]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="321" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [TRX].[GetTenantMonthYearTransactionByUId_V1]&#xD;&#xA;&#x9;@TenantUID NVARCHAR(100)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[TRX].[GetTenantTransactionByUIdAndMonthYear_V1]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT ISNULL(TA.WaterAmount, 0) + ISNULL(TA.PowerAmount, 0) + ISNULL(R.MaintenanceAmount, 0) + ISNULL(TA.OtherAmount, 0) + ISNULL(TB.PendingAmount,0) + R.RentAmount AS TotalAmount, 
+	R.RentAmount, R.MaintenanceAmount, TA.WaterAmount, TA.PowerAmount, TA.OtherAmount, TB.PendingAmount,
+	CASE WHEN TRD.IsAdvancePaid = 1 THEN 0 ELSE TRD.AdvancePendingAmount END AS AdvancePendingAmount,
+	CAST(TB.IsAmountPaid AS INT) AS IsAmountPaid, CAST(TRD.IsBillsOwnerControl AS INT) AS IsBillsOwnerControl,
+	PO.[Description] AS PaymentType, PS.[Description] AS PaymentStatus
+	FROM [ROM].TenantRoomDetails TRD
+	INNER JOIN ROM.Rooms R ON R.RoomId = TRD.RoomId
+	LEFT JOIN TRX.TransactionAmount TA ON TA.TenantRoomDetailsId = TRD.TenantRoomDetailsId AND TA.BillMonth = @BillMonth AND TA.BillYear = @BillYear
+	LEFT JOIN TRX.TransactionBills TB ON TB.TransactionAmountId = TA.TransactionAmountId
+	LEFT JOIN COM.PaymentOptions PO ON PO.Id = TB.PaidOptionsId
+	LEFT JOIN COM.PaymentStatus PS ON PS.Id = TB.PaymentStatusId
+	WHERE TRD.TenantUId = @TenantUID
+	AND TRD.IsActive = 1
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[RoomId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[GetTenantTransactionByUIdAndMonthYear_V1].[@BillMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[GetTenantTransactionByUIdAndMonthYear_V1].[@BillYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[TransactionAmountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TransactionAmountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentOptions]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaidOptionsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaymentStatusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[WaterAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[PowerAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[MaintenanceAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[OtherAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PendingAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[Rooms].[RentAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsAdvancePaid]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[AdvancePendingAmount]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[IsAmountPaid]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsBillsOwnerControl]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentOptions].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[GetTenantTransactionByUIdAndMonthYear_V1].[@TenantUID]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[GetTenantTransactionByUIdAndMonthYear_V1].[@TenantUID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[GetTenantTransactionByUIdAndMonthYear_V1].[@BillMonth]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="3" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[GetTenantTransactionByUIdAndMonthYear_V1].[@BillYear]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[TRX]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1219" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [TRX].[GetTenantTransactionByUIdAndMonthYear_V1]&#xD;&#xA;&#x9;@TenantUID NVARCHAR(100),&#xD;&#xA;&#x9;@BillMonth NVARCHAR(3),&#xD;&#xA;&#x9;@BillYear INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[TRX].[InsertTransactionDetails_V1]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	DECLARE @TenantRoomDetailsId INT, @TransactionAmountId INT
+	IF NOT EXISTS(SELECT * from TRX.TransactionAmount TA
+	INNER JOIN ROM.TenantRoomDetails TRD ON TRD.TenantRoomDetailsId = TA.TenantRoomDetailsId
+	WHERE TA.BillMonth = @BillMonth AND TA.BillYear = @BillYear AND TRD.TenantUId = @TenantUID AND TRD.IsActive = 1)
+		BEGIN
+			SELECT @TenantRoomDetailsId = TRD.TenantRoomDetailsId from ROM.TenantRoomDetails TRD 
+			WHERE TRD.TenantUId = @TenantUID AND TRD.IsActive = 1
+	
+			INSERT INTO [TRX].[TransactionAmount]
+				   ([BillMonth],[BillYear],[TenantRoomDetailsId],[PowerAmount],[WaterAmount],[OtherAmount],[IsActive],[UpdatedDate],[UpdatedBy])
+			 VALUES
+				   (@BillMonth,@BillYear,@TenantRoomDetailsId,0,0,0,@IsActive,GETDATE(),@UpdatedBy)
+
+			SELECT @TransactionAmountId = TransactionAmountId from TRX.TransactionAmount
+				WHERE BillMonth = @BillMonth AND BillYear = @BillYear AND TenantRoomDetailsId = @TenantRoomDetailsId
+
+			INSERT INTO [TRX].[TransactionBills]
+				   ([TransactionBillId],[TransactionAmountId],[IsAmountPaid],[PaymentStatusId],[PaidAmount],[PendingAmount],[PaidOn],[PaidOptionsId],[PaidDesciption],[IsActive],[UpdatedDate],[UpdatedBy])
+			 VALUES
+				   (NEWID(),@TransactionAmountId,0,NULL,0.0,0.0,NULL,NULL,NULL,@IsActive,GETDATE(),@UpdatedBy)
+		END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[InsertTransactionDetails_V1].[@BillMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[InsertTransactionDetails_V1].[@BillYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[InsertTransactionDetails_V1].[@TenantUID]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[PowerAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[WaterAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[OtherAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[InsertTransactionDetails_V1].[@IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[InsertTransactionDetails_V1].[@UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TransactionAmountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[TransactionBillId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[TransactionAmountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[IsAmountPaid]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaymentStatusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaidAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PendingAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaidOn]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaidOptionsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaidDesciption]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[UpdatedBy]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[InsertTransactionDetails_V1].[@TenantUID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[InsertTransactionDetails_V1].[@BillMonth]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="3" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[InsertTransactionDetails_V1].[@BillYear]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[InsertTransactionDetails_V1].[@PowerAmount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[InsertTransactionDetails_V1].[@OtherAmount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[InsertTransactionDetails_V1].[@WaterAmount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[InsertTransactionDetails_V1].[@IsActive]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[InsertTransactionDetails_V1].[@UpdatedBy]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[TRX]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1582" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [TRX].[InsertTransactionDetails_V1]&#xD;&#xA;&#x9;@TenantUID NVARCHAR(100),&#xD;&#xA;&#x9;@BillMonth NVARCHAR(3),&#xD;&#xA;&#x9;@BillYear INT,&#xD;&#xA;&#x9;@PowerAmount DECIMAL(10,2),&#xD;&#xA;&#x9;@OtherAmount DECIMAL(10,2),&#xD;&#xA;&#x9;@WaterAmount DECIMAL(10,2),&#xD;&#xA;    @IsActive BIT,&#xD;&#xA;    @UpdatedBy NVARCHAR(100)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[TRX].[PK_Transaction_Amount_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[TRX].[TransactionAmount].[TransactionAmountId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[TRX].[TransactionAmount]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[TRX].[PK_Transaction_Bill_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[TRX].[TransactionBills].[TransactionBillId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[TRX].[TransactionBills]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
+		</Element>
+		<Element Type="SqlTable" Name="[TRX].[TransactionAmount]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionAmount].[TransactionAmountId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionAmount].[BillMonth]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionAmount].[BillYear]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionAmount].[TenantRoomDetailsId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionAmount].[PowerAmount]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionAmount].[WaterAmount]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionAmount].[OtherAmount]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionAmount].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionAmount].[UpdatedDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionAmount].[UpdatedBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[TRX]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="25" />
+			<AttachedAnnotation Disambiguator="23" />
+		</Element>
+		<Element Type="SqlTable" Name="[TRX].[TransactionBills]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[TransactionBillId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[TransactionAmountId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[IsAmountPaid]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[PaymentStatusId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[PaidAmount]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[PendingAmount]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[PaidOn]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[PaidOptionsId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[PaidDesciption]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[UpdatedDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionBills].[UpdatedBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[TRX]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="26" />
+			<AttachedAnnotation Disambiguator="24" />
+			<AttachedAnnotation Disambiguator="22" />
+			<AttachedAnnotation Disambiguator="21" />
+		</Element>
+		<Element Type="SqlTable" Name="[TRX].[TransactionPayment]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[TRX].[TransactionPayment].[Id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="3" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[TRX]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	DECLARE @StatusId INT
+
+	SELECT @StatusId = PS.Id 
+	FROM COM.PaymentStatus PS
+	WHERE PS.Code = @PaymentStatus
+
+	UPDATE TB
+	SET PaymentStatusId = @StatusId, PaidOptionsId = 1,
+	UpdatedDate = GETDATE(), UpdatedBy = @TenantId
+	FROM TRX.TransactionBills TB
+	INNER JOIN TRX.TransactionAmount TA ON TB.TransactionAmountId = TA.TransactionAmountId
+	INNER JOIN ROM.TenantRoomDetails TRD ON TRD.TenantRoomDetailsId = TA.TenantRoomDetailsId
+	WHERE TRD.TenantUId = @TenantId AND TRD.IsActive = 1 AND TA.BillMonth = @Month
+	AND TA.BillYear = @Year
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[COM].[PaymentStatus].[Code]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@PaymentStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[TransactionAmountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TransactionAmountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaymentStatusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaidOptionsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@TenantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@Month]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@Year]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@TenantId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@PaymentStatus]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@Month]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="3" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@Year]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[TRX]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="726" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [TRX].[UpdateTeantTransactionBillPaymentStatus_V1]&#xD;&#xA;&#x9;@TenantId NVARCHAR(100),&#xD;&#xA;&#x9;@PaymentStatus NVARCHAR(100),&#xD;&#xA;&#x9;@Month NVARCHAR(3),&#xD;&#xA;&#x9;@Year INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlSchema" Name="[USR]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[USR].[FK_User_Id]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[USR].[UserTokens].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[USR].[UserTokens]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[USR].[UserData].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[USR].[UserData]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[USR].[GetUserDetailsByEmail]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT UserId, UserTypeId, DisplayName FROM [USR].[UserData] 
+	WHERE EmailId = @EmailId and PasswordHash = @Password
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[USR].[UserData]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[UserTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[DisplayName]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[EmailId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[GetUserDetailsByEmail].[@EmailId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[PasswordHash]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[GetUserDetailsByEmail].[@Password]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[GetUserDetailsByEmail].[@EmailId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="225" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[GetUserDetailsByEmail].[@Password]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="225" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[USR]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="234" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [USR].[GetUserDetailsByEmail]&#xD;&#xA;&#x9;@EmailId NVARCHAR(225),&#xD;&#xA;&#x9;@Password NVARCHAR(225)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[USR].[GetUserDetailsByRefreshToken]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT U.EmailId, U.PasswordHash FROM [USR].[UserTokens] UT
+	INNER JOIN [USR].[UserData] U ON U.UserId = UT.UserId
+	WHERE UT.RefreshToken = @RefreshToken AND UT.UserId = @UserId
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[USR].[UserTokens]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserTokens].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[EmailId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[PasswordHash]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserTokens].[RefreshToken]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[GetUserDetailsByRefreshToken].[@RefreshToken]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[GetUserDetailsByRefreshToken].[@UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[GetUserDetailsByRefreshToken].[@RefreshToken]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="225" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[GetUserDetailsByRefreshToken].[@UserId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[USR]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="296" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [USR].[GetUserDetailsByRefreshToken]&#xD;&#xA;&#x9;@RefreshToken NVARCHAR(225),&#xD;&#xA;&#x9;@UserId INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[USR].[InsertUserData]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	INSERT INTO [USR].[UserData](
+		[DisplayName],
+		[UserTypeId],
+		[EmailId],
+		[MobileNumber],
+		[PasswordHash],
+		[IsActive],
+		[UpdatedBy],
+		[UpdatedDate])
+	VALUES(
+		@DisplayName,
+		@UserTypeId,
+		@EmailId,
+		@MobileNumber,
+		@PasswordHash,
+		@IsActive,
+		@UpdatedBy,
+		GETDATE())
+
+	SELECT @UserId = SCOPE_IDENTITY();
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[USR].[UserData]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[DisplayName]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[UserTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[EmailId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[MobileNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[PasswordHash]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserData].[@DisplayName]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserData].[@UserTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserData].[@EmailId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserData].[@MobileNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserData].[@PasswordHash]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserData].[@IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserData].[@UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserData].[@UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserData].[@UserId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserData].[@DisplayName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="225" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserData].[@UserTypeId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserData].[@EmailId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="225" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserData].[@MobileNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="225" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserData].[@PasswordHash]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="225" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserData].[@UpdatedBy]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserData].[@IsActive]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[USR]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="594" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [USR].[InsertUserData]&#xD;&#xA;&#x9;@UserId INT OUTPUT,&#xD;&#xA;&#x9;@DisplayName NVARCHAR(225),&#xD;&#xA;&#x9;@UserTypeId INT,&#xD;&#xA;&#x9;@EmailId NVARCHAR(225),&#xD;&#xA;&#x9;@MobileNumber NVARCHAR(225),&#xD;&#xA;&#x9;@PasswordHash NVARCHAR(225),&#xD;&#xA;&#x9;@UpdatedBy INT,&#xD;&#xA;&#x9;@IsActive BIT = 0&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[USR].[InsertUserTokens]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	INSERT INTO [USR].[UserTokens](
+		[UserId],
+		[RefreshToken],
+		[ExpiryTime],
+		[IsActive],
+		[UpdatedBy],
+		[UpdatedDate])
+	VALUES(
+		@UserId,
+		@RefreshToken,
+		@ExpiryTime,
+		@IsActive,
+		@UpdatedBy,
+		GETDATE())
+
+	SELECT @UserTokenId = SCOPE_IDENTITY();
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[USR].[UserTokens]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserTokens].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserTokens].[RefreshToken]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserTokens].[ExpiryTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserTokens].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserTokens].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserTokens].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserTokens].[@UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserTokens].[@RefreshToken]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserTokens].[@ExpiryTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserTokens].[@IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserTokens].[@UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[InsertUserTokens].[@UserTokenId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserTokens].[@UserTokenId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserTokens].[@UserId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserTokens].[@RefreshToken]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="225" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserTokens].[@ExpiryTime]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserTokens].[@UpdatedBy]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[InsertUserTokens].[@IsActive]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[USR]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="467" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [USR].[InsertUserTokens]&#xD;&#xA;&#x9;@UserTokenId INT OUTPUT,&#xD;&#xA;&#x9;@UserId INT,&#xD;&#xA;&#x9;@RefreshToken NVARCHAR(225),&#xD;&#xA;&#x9;@ExpiryTime DATETIME,&#xD;&#xA;&#x9;@UpdatedBy INT,&#xD;&#xA;&#x9;@IsActive BIT = 0&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[USR].[IsEmailOrMobileExists]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT 
+		CASE WHEN COUNT(USR2.EmailId) > 0 THEN 1 ELSE 0 END AS 'IsEmailExists', 
+		CASE WHEN Count(USR3.MobileNumber) > 0 THEN 1 ELSE 0 END AS 'IsMobileExists' FROM [USR].[UserData] USR1
+	LEFT OUTER JOIN [USR].[UserData] USR2 ON USR1.UserId = USR2.UserId AND USR2.EmailId = @EmailId
+	LEFT OUTER JOIN [USR].[UserData] USR3 ON USR1.UserId = USR3.UserId AND USR3.MobileNumber = @MobileNumber
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[USR].[UserData]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[EmailId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[IsEmailOrMobileExists].[@EmailId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[UserData].[MobileNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[USR].[IsEmailOrMobileExists].[@MobileNumber]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[IsEmailOrMobileExists].[@EmailId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="225" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[USR].[IsEmailOrMobileExists].[@MobileNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="225" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[USR]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="515" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [USR].[IsEmailOrMobileExists]&#xD;&#xA;&#x9;@EmailId NVARCHAR(225),&#xD;&#xA;&#x9;@MobileNumber NVARCHAR(225)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[USR].[PK_User_Token_Id]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[USR].[UserTokens].[UserTokenId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[USR].[UserTokens]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="28" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[USR].[PK_UserId]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[USR].[UserData].[UserId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[USR].[UserData]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
+		</Element>
+		<Element Type="SqlTable" Name="[USR].[UserData]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserData].[UserId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserData].[DisplayName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserData].[EmailId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="4" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserData].[MobileNumber]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="15" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="5" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserData].[PasswordHash]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserData].[UserTypeId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserData].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserData].[UpdatedBy]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserData].[UpdatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[USR]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="29" />
+		</Element>
+		<Element Type="SqlTable" Name="[USR].[UserDetails]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserDetails].[UserDetailsId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserDetails].[UserId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[USR]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[USR].[UserTokens]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserTokens].[UserTokenId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserTokens].[UserId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserTokens].[RefreshToken]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserTokens].[ExpiryTime]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserTokens].[IsActive]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserTokens].[UpdatedBy]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[USR].[UserTokens].[UpdatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[USR]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="28" />
+			<AttachedAnnotation Disambiguator="27" />
+		</Element>
+	</Model>
+</DataSchemaModel>

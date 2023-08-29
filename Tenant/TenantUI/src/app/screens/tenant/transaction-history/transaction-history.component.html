@@ -1,0 +1,55 @@
+<nz-collapse nzAccordion *ngIf="transactions.length > 0">
+    <nz-collapse-panel *ngFor="let transaction of transactions" 
+        nzHeader="{{transaction.month}}-{{transaction.year}}"
+        [(nzActive)]="transaction.active" (nzActiveChange)="loadCurrentMonth(transaction)">
+            <div *ngIf="transactionMonthYearDetails != undefined">
+                <nz-list>
+                    <nz-list-item>
+                        <span nz-typography>Payment Status: </span>
+                        <span [ngClass]=
+                        "{'amberSet': !transactionMonthYearDetails.isAmountPaid, 
+                            'greenSet': transactionMonthYearDetails.isAmountPaid}">
+                            <b>{{transactionMonthYearDetails.paymentStatus}}</b></span>
+                    </nz-list-item>
+                    <nz-list-item>
+                        <span nz-typography>Rent Amount: </span>
+                        <b>{{ transactionMonthYearDetails.rentAmount }}</b>
+                    </nz-list-item>
+                    <nz-list-item>
+                        <span nz-typography>Maintenance Amount: </span>
+                        <b>{{ transactionMonthYearDetails.maintenanceAmount }}</b>
+                    </nz-list-item>
+                    <nz-list-item>
+                        <span nz-typography>Power Amount: </span>
+                        <b>{{ transactionMonthYearDetails.powerAmount }}</b>
+                    </nz-list-item>
+                    <nz-list-item>
+                        <span nz-typography>Water Amount: </span>
+                        <b>{{ transactionMonthYearDetails.waterAmount }}</b>
+                    </nz-list-item>
+                    <nz-list-item>
+                        <span nz-typography>Other Amount: </span>
+                        <b>{{ transactionMonthYearDetails.otherAmount }}</b>
+                    </nz-list-item>
+                    <nz-list-item>
+                        <span nz-typography>Pending Amount: </span>
+                        <b>{{ transactionMonthYearDetails.pendingAmount }}</b>
+                    </nz-list-item>
+                    <nz-list-item>
+                        <span nz-typography>Advance Pending Amount: </span>
+                        <b>{{ transactionMonthYearDetails.advancePendingAmount }}</b>
+                    </nz-list-item>
+                    <nz-list-item>
+                        <span nz-typography>Total Amount: </span>
+                        <b>{{transactionMonthYearDetails.totalAmount}}</b>
+                    </nz-list-item>
+                </nz-list>
+            </div>
+            <div *ngIf="transactionMonthYearDetails == undefined" class="example">
+                <nz-spin nzSimple></nz-spin>
+            </div>
+    </nz-collapse-panel>
+</nz-collapse>
+<div *ngIf="transactions.length <= 0" class="example">
+    <nz-spin nzSimple></nz-spin>
+</div>

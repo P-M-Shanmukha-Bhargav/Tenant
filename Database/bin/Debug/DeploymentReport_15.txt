@@ -1,0 +1,23 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Alter
+       [TRX].[TransactionBills] (Table)
+
+** Supporting actions
+     Drop
+       [TRX].[FK_Paid_Options] (Foreign Key)
+       [TRX].[FK_Payment_Status_Id] (Foreign Key)
+     Create
+       [TRX].[FK_Paid_Options] (Foreign Key)
+       [TRX].[FK_Payment_Status_Id] (Foreign Key)
+     Refresh
+       [TRX].[GetTenantTransactionByUIdAndMonthYear_V1] (Procedure)

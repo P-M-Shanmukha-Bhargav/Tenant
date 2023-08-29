@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [DML] (Schema)
+       [DML].[Merge_COM.ComplaintStatus] (Procedure)
+       [DML].[Merge_COM.PaymentStatus] (Procedure)
+       [DML].[Merge_COM.RoomSizeType] (Procedure)
+       [DML].[Merge_COM.PaymentOptions] (Procedure)
+       [DML].[Merge_COM.RoomType] (Procedure)
+       [DML].[Merge_RunAllScripts] (Procedure)
+
+** Supporting actions

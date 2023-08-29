@@ -1,0 +1,21 @@
+<nz-page-header class="" [nzGhost]="false">
+  <nz-page-header-title>Tenant App</nz-page-header-title>
+  <nz-page-header-subtitle *ngIf="isUserLoggedIn">Welcome {{displayName}}</nz-page-header-subtitle>
+  <nz-page-header-tags *ngIf="false">
+    <nz-tag [nzColor]="'orange'">Incomplete</nz-tag>
+  </nz-page-header-tags>
+  <nz-page-header-extra *ngIf="isUserLoggedIn">
+    <nz-space>
+      <button *nzSpaceItem nz-button nzType="link" (click)="Home()">Home</button>
+      <button *nzSpaceItem nz-button nzType="link">Settings</button>
+      <button *nzSpaceItem nz-button nzType="link" (click)="Logout()">Logout</button>
+    </nz-space>
+  </nz-page-header-extra>
+  <nz-page-header-extra *ngIf="!isUserLoggedIn">
+    <nz-space>
+      <button *nzSpaceItem nz-button nzType="link" (click)="loginModal()">Login</button>
+      <!-- <button *nzSpaceItem nz-button nzType="link" (click)="registerModal()">Register</button> -->
+    </nz-space>
+  </nz-page-header-extra>
+</nz-page-header>
+<router-outlet></router-outlet>

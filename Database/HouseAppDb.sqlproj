@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>HouseAppDb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{79620298-a679-42f2-9765-8de076eab699}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath />
+    <RootNamespace>HouseAppDb</RootNamespace>
+    <AssemblyName>HouseAppDb</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Security" />
+    <Folder Include="TRX" />
+    <Folder Include="TRX\Tables" />
+    <Folder Include="ROM" />
+    <Folder Include="ROM\Tables" />
+    <Folder Include="COM_" />
+    <Folder Include="COM_\Tables" />
+    <Folder Include="DML" />
+    <Folder Include="DML\Scripts" />
+    <Folder Include="TRX\StoredProcedure" />
+    <Folder Include="ROM\StoredProcedure" />
+    <Folder Include="USR" />
+    <Folder Include="USR\Tables" />
+    <Folder Include="USR\StoredProcedure" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\TRX.sql" />
+    <Build Include="TRX\Tables\TransactionBills.sql" />
+    <Build Include="Security\COM_.sql" />
+    <Build Include="Security\ROM.sql" />
+    <Build Include="ROM\Tables\TenantRoomDetails.sql" />
+    <Build Include="ROM\Tables\Rooms.sql" />
+    <Build Include="ROM\Tables\Complaints.sql" />
+    <Build Include="COM_\Tables\ComplaintStatus.sql" />
+    <Build Include="COM_\Tables\RoomSizeType.sql" />
+    <Build Include="COM_\Tables\RoomType.sql" />
+    <Build Include="COM_\Tables\PaymentStatus.sql" />
+    <Build Include="COM_\Tables\PaymentOptions.sql" />
+    <Build Include="Security\DML.sql" />
+    <Build Include="DML\Scripts\Merge_COM.ComplaintStatus.sql" />
+    <Build Include="DML\Scripts\Merge_COM.PaymentOptions.sql" />
+    <Build Include="DML\Scripts\Merge_RunAllScripts.sql" />
+    <Build Include="DML\Scripts\Merge_COM.PaymentStatus.sql" />
+    <Build Include="DML\Scripts\Merge_COM.RoomSizeType.sql" />
+    <Build Include="DML\Scripts\Merge_COM.RoomType.sql" />
+    <Build Include="TRX\Tables\TransactionAmount.sql" />
+    <Build Include="TRX\StoredProcedure\GetTenantMonthYearTransactionByUId_V1.sql" />
+    <Build Include="TRX\StoredProcedure\GetTenantTransactionByUIdAndMonthYear_V1.sql" />
+    <Build Include="ROM\StoredProcedure\InsertTenantRoomDetails_V1.sql" />
+    <Build Include="ROM\StoredProcedure\UpdateTeantRoomExitDetails_V1.sql" />
+    <Build Include="ROM\StoredProcedure\InsertRoomDetails_V1.sql" />
+    <Build Include="TRX\StoredProcedure\InsertTransactionDetails_V1.sql" />
+    <Build Include="ROM\Tables\RoomAddress.sql" />
+    <Build Include="ROM\StoredProcedure\InsertRoomAddress_V1.sql" />
+    <Build Include="ROM\StoredProcedure\GetTenantListForOwner_V1.sql" />
+    <Build Include="ROM\StoredProcedure\GetRoomDetailsByRoomId_V1.sql" />
+    <Build Include="Security\USR.sql" />
+    <Build Include="USR\Tables\UserData.sql" />
+    <Build Include="USR\Tables\UserTokens.sql" />
+    <Build Include="USR\Tables\UserDetails.sql" />
+    <Build Include="USR\StoredProcedure\GetUserDetailsByEmail.sql" />
+    <Build Include="USR\StoredProcedure\GetUserDetailsByRefreshToken.sql" />
+    <Build Include="USR\StoredProcedure\InsertUserData.sql" />
+    <Build Include="USR\StoredProcedure\InsertUserTokens.sql" />
+    <Build Include="USR\StoredProcedure\IsEmailOrMobileExists.sql" />
+    <Build Include="TRX\StoredProcedure\UpdateTeantTransactionBillPaymentStatus_V1.sql" />
+    <Build Include="TRX\Tables\TransactionPayment.sql" />
+  </ItemGroup>
+</Project>

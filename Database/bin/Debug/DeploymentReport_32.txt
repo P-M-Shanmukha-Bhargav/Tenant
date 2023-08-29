@@ -1,0 +1,66 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [COM] (Schema)
+       [DML] (Schema)
+       [ROM] (Schema)
+       [TRX] (Schema)
+       [USR] (Schema)
+       [COM].[PaymentOptions] (Table)
+       [COM].[PaymentStatus] (Table)
+       [COM].[RoomType] (Table)
+       [COM].[RoomSizeType] (Table)
+       [COM].[ComplaintStatus] (Table)
+       [ROM].[Complaints] (Table)
+       [ROM].[Rooms] (Table)
+       [ROM].[TenantRoomDetails] (Table)
+       [ROM].[RoomAddress] (Table)
+       [TRX].[TransactionAmount] (Table)
+       [TRX].[TransactionBills] (Table)
+       [TRX].[TransactionPayment] (Table)
+       [USR].[UserDetails] (Table)
+       [USR].[UserTokens] (Table)
+       [USR].[UserData] (Table)
+       [ROM].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [ROM].[FK_Complaint_Status] (Foreign Key)
+       [ROM].[FK_Room_Size_Type] (Foreign Key)
+       [ROM].[FK_Room_Type] (Foreign Key)
+       [ROM].[FK_Room_Id] (Foreign Key)
+       [ROM].[FK_Rooms_Id] (Foreign Key)
+       [TRX].[FK_Tenant_Room_Details_Id] (Foreign Key)
+       [TRX].[FK_Transaction_Amount_Id] (Foreign Key)
+       [TRX].[FK_Payment_Status_Id] (Foreign Key)
+       [TRX].[FK_Paid_Options] (Foreign Key)
+       [USR].[FK_User_Id] (Foreign Key)
+       [DML].[Merge_COM.RoomType] (Procedure)
+       [DML].[Merge_COM.RoomSizeType] (Procedure)
+       [DML].[Merge_COM.PaymentStatus] (Procedure)
+       [DML].[Merge_COM.PaymentOptions] (Procedure)
+       [DML].[Merge_COM.ComplaintStatus] (Procedure)
+       [ROM].[GetRoomDetailsByRoomId_V1] (Procedure)
+       [ROM].[GetTenantListForOwner_V1] (Procedure)
+       [ROM].[InsertRoomAddress_V1] (Procedure)
+       [ROM].[InsertRoomDetails_V1] (Procedure)
+       [ROM].[InsertTenantRoomDetails_V1] (Procedure)
+       [ROM].[UpdateTeantRoomExitDetails_V1] (Procedure)
+       [TRX].[GetTenantMonthYearTransactionByUId_V1] (Procedure)
+       [TRX].[InsertTransactionDetails_V1] (Procedure)
+       [TRX].[GetTenantTransactionByUIdAndMonthYear_V1] (Procedure)
+       [TRX].[UpdateTeantTransactionBillPaymentStatus_V1] (Procedure)
+       [USR].[IsEmailOrMobileExists] (Procedure)
+       [USR].[InsertUserTokens] (Procedure)
+       [USR].[InsertUserData] (Procedure)
+       [USR].[GetUserDetailsByRefreshToken] (Procedure)
+       [USR].[GetUserDetailsByEmail] (Procedure)
+       [DML].[Merge_RunAllScripts] (Procedure)
+
+** Supporting actions

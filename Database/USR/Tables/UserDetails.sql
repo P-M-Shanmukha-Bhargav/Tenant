@@ -1,0 +1,5 @@
+﻿CREATE TABLE [USR].[UserDetails]
+(
+	[UserDetailsId] INT NOT NULL,
+	[UserId] UNIQUEIDENTIFIER NOT NULL,
+)
