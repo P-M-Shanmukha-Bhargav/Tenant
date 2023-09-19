@@ -10,3 +10,15 @@ C:\My Stuff\Projects\TenantApp\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\T
 C:\My Stuff\Projects\TenantApp\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\refint\Tenant.Infra.dll
 C:\My Stuff\Projects\TenantApp\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\Tenant.Infra.pdb
 C:\My Stuff\Projects\TenantApp\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\ref\Tenant.Infra.dll
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\bin\Debug\net7.0\Tenant.Infra.deps.json
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\bin\Debug\net7.0\Tenant.Infra.dll
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\bin\Debug\net7.0\Tenant.Infra.pdb
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\Tenant.Infra.csproj.AssemblyReference.cache
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\Tenant.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\Tenant.Infra.AssemblyInfoInputs.cache
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\Tenant.Infra.AssemblyInfo.cs
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\Tenant.Infra.csproj.CoreCompileInputs.cache
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\Tenant.Infra.dll
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\refint\Tenant.Infra.dll
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\Tenant.Infra.pdb
+C:\My Stuff\Projects\Tenant\Api\TenantApp\src\Tenant.Infra\obj\Debug\net7.0\ref\Tenant.Infra.dll

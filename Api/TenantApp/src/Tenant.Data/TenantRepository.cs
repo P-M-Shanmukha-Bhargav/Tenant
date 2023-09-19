@@ -6,6 +6,7 @@ using Tenant.Data.Interfaces;
 using Tenant.Infra.Enums;
 using Tenant.Infra.Extensions;
 using Tenant.Infra.Instances;
+using Tenant.Infra.Models.Payment;
 using Tenant.Infra.Models.Tenant;
 using WMInfra.Data;
 
@@ -139,7 +140,7 @@ namespace Tenant.Data
             return resp;
         }
 
-        public bool? UpdateTransactionBillPaymentStatus(PaymentStatus paymentStatus, string month, int year)
+        public bool? UpdateTransactionBillPaymentStatus(PaymentStatus paymentStatus, string month, int year, string paidAmount)
         {
             bool? resp = null;
             using (var connection = DbFactory.CreateConnection(_configuration.GetConnectionString(_configuration.GetSection("Environment").Value)))
@@ -159,6 +160,11 @@ namespace Tenant.Data
                 }
             }
             return resp;
+        }
+
+        public void InsertTransactionPayment(TenantPaymentResponse resp)
+        {
+            throw new NotImplementedException();
         }
 
         #region Private Methods

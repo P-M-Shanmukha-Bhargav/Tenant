@@ -13,7 +13,8 @@ USING (VALUES
 (1,'PEND', 'Pending', 1, GETDATE(), NULL),
 (2,'INIT', 'Initiated', 1, GETDATE(), NULL),
 (3,'PAID', 'Payment Completed', 1, GETDATE(), NULL),
-(4,'PART', 'Partial Payment', 1, GETDATE(), NULL)
+(4,'PART', 'Partial Payment', 1, GETDATE(), NULL),
+(4,'FAIL', 'Payment Failed', 1, GETDATE(), NULL)
 
 
 ) AS Source ([Id],[Code],[Description],[IsActive],[UpdatedDate],[UpdatedBy])

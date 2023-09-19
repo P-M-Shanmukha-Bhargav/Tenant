@@ -32,7 +32,7 @@ export class HomeComponent {
       }, (error) => { console.log(error); this.notification.error("Error", error); });
   }
 
-  makePayment(){
+  makePayment(totalAmount: any){
 
     const modal: NzModalRef = this.modal.create({
       nzTitle: 'Payment Options',
@@ -55,39 +55,37 @@ export class HomeComponent {
           label: 'Online Payment',
           type: 'primary',
           onClick: () => {
-            
+            var trxId = this.paymentService.generateTrxId();
+            var productinfo = this.paymentService.generateProductInfo();
+            var displayName = JSON.parse(window.localStorage.getItem("user")!).displayName;
+            var emailId = JSON.parse(window.localStorage.getItem("user")!).email;
+            var phone = JSON.parse(window.localStorage.getItem("user")!).phoneNumber;
+            var key = environment.payment.key;
+            var salt = environment.payment.salt;
+
+            this.paymentService.generateHash(`${key}|${trxId}|${totalAmount}|${productinfo}|${displayName}|${emailId}|||||||||||${salt}`)
+            .then((resp) => {
+              var params = {
+                key: key,
+                txnid: trxId,
+                productinfo: productinfo,
+                amount: totalAmount.toString(),
+                email: emailId,
+                firstname: displayName,
+                surl: environment.apiURL + environment.payment.surl,
+                furl: environment.apiURL + environment.payment.furl,
+                phone: phone,
+                hash: resp,
+                salt: salt
+              };
+
+              this.paymentService.makePayment(params)
+            });
             modal.destroy();
           }
         },
       ]
     });
-    
-    // var trxId = this.paymentService.generateTrxId();
-    // var productinfo = this.paymentService.generateProductInfo();
-    // var displayName = JSON.parse(window.localStorage.getItem("user")!).displayName;
-    // var emailId = JSON.parse(window.localStorage.getItem("user")!).email;
-    // var phone = JSON.parse(window.localStorage.getItem("user")!).phoneNumber;
-    // var key = environment.payment.key;
-    // var salt = environment.payment.salt;
-
-    // this.paymentService.generateHash(`${key}|${trxId}|${totalAmount}|${productinfo}|${displayName}|${emailId}|||||||||||${salt}`)
-    // .then((resp) => {
-    //   var params = {
-    //     key: key,
-    //     txnid: trxId,
-    //     productinfo: productinfo,
-    //     amount: totalAmount.toString(),
-    //     email: emailId,
-    //     firstname: displayName,
-    //     surl: environment.apiURL + environment.payment.surl,
-    //     furl: environment.apiURL + environment.payment.furl,
-    //     phone: phone,
-    //     hash: resp,
-    //     salt: salt
-    //   };
-
-    //   this.paymentService.makePayment(params)
-    // });
   }
 
   navigateToHistoryList(){

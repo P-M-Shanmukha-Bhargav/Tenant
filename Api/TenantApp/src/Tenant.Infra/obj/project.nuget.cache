@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r5puyws5WcirsggdHdSd0jz12Jh5szAfrRkbMRds1cTk5/4TnmQ2t7Fd+bueLCjtPQFzpmXNysZzBH3nTpdJdg==",
+  "dgSpecHash": "E45gB/SVvyW+oXuIX8eMuA9jMVoPFQ+fcPbTOfrdLQHCN8hpHbRAzRNPdvkUDPOp1zhZF1dJCq4MHj6sBtS3mA==",
   "success": true,
-  "projectFilePath": "C:\\My Stuff\\Projects\\TenantApp\\Api\\TenantApp\\src\\Tenant.Infra\\Tenant.Infra.csproj",
+  "projectFilePath": "C:\\My Stuff\\Projects\\Tenant\\Api\\TenantApp\\src\\Tenant.Infra\\Tenant.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\2049277\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\2049277\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

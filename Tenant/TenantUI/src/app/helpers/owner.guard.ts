@@ -10,7 +10,7 @@ export class OwnerGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     var resp = JSON.parse(localStorage.getItem("userData")!);
-    return resp != null && resp.roles != null && resp.roles.isOwner;
+    return resp != null && resp.userTypeId == 2;
   }
   
 }

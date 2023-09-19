@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DeDbwPjWXX6co3p50TmvSVUm9vOCp0kx9nB6KbQ8nL/+5fea9D5zWuzGML+n5hyoM7DypdM8EYuQK1hTw1AEcA==",
+  "dgSpecHash": "8gOYUE7/nVZF1bLvzVNDMX8KOhILKrDrRhEt6JkUtKI4d1MszxaKC5hP+3B6ywlKypQ4ugmmp5hS4E4mK0lebg==",
   "success": true,
-  "projectFilePath": "C:\\My Stuff\\Projects\\TenantApp\\Api\\TenantApp\\src\\Tenant.API\\Tenant.API.csproj",
+  "projectFilePath": "C:\\My Stuff\\Projects\\Tenant\\Api\\TenantApp\\src\\Tenant.API\\Tenant.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\2049277\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\2049277\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.9\\microsoft.aspnet.webapi.core.5.2.9.nupkg.sha512",

@@ -52,11 +52,7 @@ export class AuthService {
     return this.fbs.collection("users")
       .doc(uid)
       .set({
-        "role": role,
-        "roles": {
-          "isTenant": role == 'tenant',
-          "isOwner": role == 'owner'
-        }
+        "userTypeId": role == "tenant" ? 1 : 2,
       });
   }
 
@@ -93,8 +89,8 @@ export class AuthService {
     return !tokenExpired;
   }
 
-  get displayName(): string {
-    return JSON.parse(window.localStorage.getItem("user")!)["displayName"];
+  get displayName(): string{
+    return JSON.parse(window.localStorage.getItem("user")!).displayName;
   }
 
   // Sign out
@@ -148,10 +144,10 @@ export class AuthService {
 
         localStorage.setItem("userData", JSON.stringify(res.data()));
         
-        if(JSON.parse(window.localStorage.getItem("userData")!).roles.isTenant){
+        if(JSON.parse(window.localStorage.getItem("userData")!).userTypeId == 1){
           this.router.navigate(["home"]);
         }
-        else if(JSON.parse(window.localStorage.getItem("userData")!).roles.isOwner){
+        else if(JSON.parse(window.localStorage.getItem("userData")!).userTypeId == 2){
           this.router.navigate(["dashboard"]);
         }
 

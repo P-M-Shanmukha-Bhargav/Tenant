@@ -11,6 +11,7 @@ namespace Tenant.Infra.Enums
         PEND,
         INIT,
         PAID,
-        PART
+        PART,
+        FAIL
     }
 }

@@ -59,7 +59,7 @@ namespace Tenant.Domain
                 new Response<bool?>(null, ResponseCode.BadRequest, new[] { new ResponseMessage() { } });
         }
 
-        public Response<string> UpdatePaymentTransactionStatus(TenantPaymentResponse data)
+        public Response<string> UpdatePaymentTransactionStatus(TenantPaymentResponse data = null)
         {
             var details = data.txnid?.Split(':');
 
@@ -73,7 +73,22 @@ namespace Tenant.Domain
             if (trxUserDetails.IsBillsOwnerControl && 
                 (trxUserDetails.PowerAmount > 0 || trxUserDetails.WaterAmount > 0))
             {
-                _tenantRepository.UpdateTransactionBillPaymentStatus(PaymentStatus.PAID, $"{DateTime.Now:MMM}", DateTime.Now.Year);
+                _tenantRepository.UpdateTransactionBillPaymentStatus(PaymentStatus.PAID, $"{DateTime.Now:MMM}", DateTime.Now.Year, data.amount);
+            }
+            else
+            {
+                if (data.status == "success")
+                {
+                    var updated = _tenantRepository.UpdateTransactionBillPaymentStatus(PaymentStatus.PART, $"{DateTime.Now:MMM}", DateTime.Now.Year, data.amount);
+                    if (updated.HasValue && updated.Value)
+                    {
+                        _tenantRepository.InsertTransactionPayment(data);
+                    }
+                }
+                else
+                {
+                    return new Response<string>("Failed");
+                }
             }
 
 

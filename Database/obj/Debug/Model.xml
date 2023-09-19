@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="HouseAppDb.dll" />
-			<Metadata Name="FileName" Value="C:\MY STUFF\PROJECTS\TENANTAPP\DATABASE\OBJ\DEBUG\HOUSEAPPDB.DLL" />
+			<Metadata Name="FileName" Value="C:\MY STUFF\PROJECTS\TENANT\DATABASE\OBJ\DEBUG\HOUSEAPPDB.DLL" />
 			<Metadata Name="AssemblyName" Value="HouseAppDb" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\My Stuff\Projects\TenantApp\Database\obj\Debug\HouseAppDb.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\My Stuff\Projects\Tenant\Database\obj\Debug\HouseAppDb.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -4062,6 +4062,16 @@ BEGIN
 			 VALUES
 				   (NEWID(),@TransactionAmountId,0,NULL,0.0,0.0,NULL,NULL,NULL,@IsActive,GETDATE(),@UpdatedBy)
 		END
+	--ELSE
+	--	BEGIN
+	--		SELECT @TenantRoomDetailsId = TRD.TenantRoomDetailsId from ROM.TenantRoomDetails TRD 
+	--		WHERE TRD.TenantUId = @TenantUID AND TRD.IsActive = 1
+
+	--		UPDATE [TRX].[TransactionAmount]
+	--		SET [PowerAmount] = @PowerAmount,[WaterAmount] = @WaterAmount,[OtherAmount] = @OtherAmount
+	--		WHERE BillMonth = @BillMonth AND BillYear = @BillYear AND TenantRoomDetailsId = @TenantRoomDetailsId
+			
+	--	END
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -4327,7 +4337,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1582" />
+				<Property Name="Length" Value="2013" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [TRX].[InsertTransactionDetails_V1]&#xD;&#xA;&#x9;@TenantUID NVARCHAR(100),&#xD;&#xA;&#x9;@BillMonth NVARCHAR(3),&#xD;&#xA;&#x9;@BillYear INT,&#xD;&#xA;&#x9;@PowerAmount DECIMAL(10,2),&#xD;&#xA;&#x9;@OtherAmount DECIMAL(10,2),&#xD;&#xA;&#x9;@WaterAmount DECIMAL(10,2),&#xD;&#xA;    @IsActive BIT,&#xD;&#xA;    @UpdatedBy NVARCHAR(100)&#xD;&#xA;AS" />
@@ -4792,19 +4802,49 @@ BEGIN
 	SELECT @StatusId = PS.Id 
 	FROM COM.PaymentStatus PS
 	WHERE PS.Code = @PaymentStatus
+	DECLARE @TenantRoomDetailsId INT, @TransactionAmountId INT
 
-	UPDATE TB
-	SET PaymentStatusId = @StatusId, PaidOptionsId = 1,
-	UpdatedDate = GETDATE(), UpdatedBy = @TenantId
-	FROM TRX.TransactionBills TB
-	INNER JOIN TRX.TransactionAmount TA ON TB.TransactionAmountId = TA.TransactionAmountId
+	IF NOT EXISTS(SELECT * from TRX.TransactionAmount TA
 	INNER JOIN ROM.TenantRoomDetails TRD ON TRD.TenantRoomDetailsId = TA.TenantRoomDetailsId
-	WHERE TRD.TenantUId = @TenantId AND TRD.IsActive = 1 AND TA.BillMonth = @Month
-	AND TA.BillYear = @Year
+	WHERE TA.BillMonth = @Month AND TA.BillYear = @Year AND TRD.TenantUId = @TenantId AND TRD.IsActive = 1)
+		BEGIN
+			SELECT @TenantRoomDetailsId = TRD.TenantRoomDetailsId from ROM.TenantRoomDetails TRD 
+			WHERE TRD.TenantUId = @TenantId AND TRD.IsActive = 1
+	
+			INSERT INTO [TRX].[TransactionAmount]
+				   ([BillMonth],[BillYear],[TenantRoomDetailsId],[PowerAmount],[WaterAmount],[OtherAmount],[IsActive],[UpdatedDate],[UpdatedBy])
+			 VALUES
+				   (@Month,@Year,@TenantRoomDetailsId,0,0,0,1,GETDATE(),'SYSTEM')
+
+			SELECT @TransactionAmountId = TransactionAmountId from TRX.TransactionAmount
+				WHERE BillMonth = @Month AND BillYear = @Year AND TenantRoomDetailsId = @TenantRoomDetailsId
+
+			INSERT INTO [TRX].[TransactionBills]
+				   ([TransactionBillId],[TransactionAmountId],[IsAmountPaid],[PaymentStatusId],[PaidAmount],[PendingAmount],[PaidOn],[PaidOptionsId],[PaidDesciption],[IsActive],[UpdatedDate],[UpdatedBy])
+			 VALUES
+				   (NEWID(),@TransactionAmountId,0,NULL,0.0,0.0,NULL,NULL,NULL,1,GETDATE(),'SYSTEM')
+		END
+	
+	BEGIN
+		UPDATE TB
+		SET PaymentStatusId = @StatusId, PaidOptionsId = 1,
+		UpdatedDate = GETDATE(), UpdatedBy = @TenantId
+		FROM TRX.TransactionBills TB
+		INNER JOIN TRX.TransactionAmount TA ON TB.TransactionAmountId = TA.TransactionAmountId
+		INNER JOIN ROM.TenantRoomDetails TRD ON TRD.TenantRoomDetailsId = TA.TenantRoomDetailsId
+		WHERE TRD.TenantUId = @TenantId AND TRD.IsActive = 1 AND TA.BillMonth = @Month
+		AND TA.BillYear = @Year
+	END
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[int]" />
 				</Entry>
@@ -4821,16 +4861,7 @@ END]]></Value>
 					<References Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@PaymentStatus]" />
 				</Entry>
 				<Entry>
-					<References Name="[TRX].[TransactionBills]" />
-				</Entry>
-				<Entry>
 					<References Name="[TRX].[TransactionAmount]" />
-				</Entry>
-				<Entry>
-					<References Name="[TRX].[TransactionBills].[TransactionAmountId]" />
-				</Entry>
-				<Entry>
-					<References Name="[TRX].[TransactionAmount].[TransactionAmountId]" />
 				</Entry>
 				<Entry>
 					<References Name="[ROM].[TenantRoomDetails]" />
@@ -4840,27 +4871,6 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[TRX].[TransactionAmount].[TenantRoomDetailsId]" />
-				</Entry>
-				<Entry>
-					<References Name="[TRX].[TransactionBills].[PaymentStatusId]" />
-				</Entry>
-				<Entry>
-					<References Name="[TRX].[TransactionBills].[PaidOptionsId]" />
-				</Entry>
-				<Entry>
-					<References Name="[TRX].[TransactionBills].[UpdatedDate]" />
-				</Entry>
-				<Entry>
-					<References Name="[TRX].[TransactionBills].[UpdatedBy]" />
-				</Entry>
-				<Entry>
-					<References Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@TenantId]" />
-				</Entry>
-				<Entry>
-					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
-				</Entry>
-				<Entry>
-					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
 				</Entry>
 				<Entry>
 					<References Name="[TRX].[TransactionAmount].[BillMonth]" />
@@ -4873,6 +4883,117 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@Year]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[UpdateTeantTransactionBillPaymentStatus_V1].[@TenantId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[PowerAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[WaterAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[OtherAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TransactionAmountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[TransactionBillId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[TransactionAmountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[IsAmountPaid]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaymentStatusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaidAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PendingAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaidOn]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaidOptionsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[PaidDesciption]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[UpdatedDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[UpdatedBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionBills].[TransactionAmountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TransactionAmountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[TenantRoomDetailsId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[TenantUId]" />
+				</Entry>
+				<Entry>
+					<References Name="[ROM].[TenantRoomDetails].[IsActive]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[TRX].[TransactionAmount].[BillYear]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -4946,7 +5067,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="726" />
+				<Property Name="Length" Value="2008" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [TRX].[UpdateTeantTransactionBillPaymentStatus_V1]&#xD;&#xA;&#x9;@TenantId NVARCHAR(100),&#xD;&#xA;&#x9;@PaymentStatus NVARCHAR(100),&#xD;&#xA;&#x9;@Month NVARCHAR(3),&#xD;&#xA;&#x9;@Year INT&#xD;&#xA;AS" />

@@ -12,7 +12,7 @@ namespace Tenant.Domain.Interfaces
         Response<TenantDashboard?> GetTenantDashboard();
         Response<List<TransactionHistory>?> GetTenantTransactions();
         Response<TenantDashboard?> GetTenantTransactionByMonthYear(string monthYear);
-        Response<string> UpdatePaymentTransactionStatus(TenantPaymentResponse data);
+        Response<string> UpdatePaymentTransactionStatus(TenantPaymentResponse data = null);
 
         Response<bool?> UpdateExitDetailsForTenantRoomDetails();
     }

@@ -18,3 +18,13 @@ C:\My Stuff\Projects\TenantApp\Database\obj\Debug\Model.xml
 C:\My Stuff\Projects\TenantApp\Database\obj\Debug\refactor.xml
 C:\My Stuff\Projects\TenantApp\Database\obj\Debug\postdeploy.sql
 C:\My Stuff\Projects\TenantApp\Database\obj\Debug\predeploy.sql
+C:\My Stuff\Projects\Tenant\Database\bin\Debug\HouseAppDb.dacpac
+C:\My Stuff\Projects\Tenant\Database\bin\Debug\HouseAppDb.dll
+C:\My Stuff\Projects\Tenant\Database\bin\Debug\HouseAppDb.pdb
+C:\My Stuff\Projects\Tenant\Database\obj\Debug\HouseAppDb.sqlproj.AssemblyReference.cache
+C:\My Stuff\Projects\Tenant\Database\obj\Debug\Model.xml
+C:\My Stuff\Projects\Tenant\Database\obj\Debug\refactor.xml
+C:\My Stuff\Projects\Tenant\Database\obj\Debug\postdeploy.sql
+C:\My Stuff\Projects\Tenant\Database\obj\Debug\predeploy.sql
+C:\My Stuff\Projects\Tenant\Database\obj\Debug\HouseAppDb.dll
+C:\My Stuff\Projects\Tenant\Database\obj\Debug\HouseAppDb.pdb

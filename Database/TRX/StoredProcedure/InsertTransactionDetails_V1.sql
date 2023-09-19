@@ -30,4 +30,14 @@ BEGIN
 			 VALUES
 				   (NEWID(),@TransactionAmountId,0,NULL,0.0,0.0,NULL,NULL,NULL,@IsActive,GETDATE(),@UpdatedBy)
 		END
+	--ELSE
+	--	BEGIN
+	--		SELECT @TenantRoomDetailsId = TRD.TenantRoomDetailsId from ROM.TenantRoomDetails TRD 
+	--		WHERE TRD.TenantUId = @TenantUID AND TRD.IsActive = 1
+
+	--		UPDATE [TRX].[TransactionAmount]
+	--		SET [PowerAmount] = @PowerAmount,[WaterAmount] = @WaterAmount,[OtherAmount] = @OtherAmount
+	--		WHERE BillMonth = @BillMonth AND BillYear = @BillYear AND TenantRoomDetailsId = @TenantRoomDetailsId
+			
+	--	END
 END

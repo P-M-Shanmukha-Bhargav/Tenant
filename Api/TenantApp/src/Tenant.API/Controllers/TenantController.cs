@@ -124,9 +124,30 @@ namespace Tenant.API.Controllers
         }
 
         /// <summary>
-        /// Opdates the tenant Transaction details to INIT
+        /// Add tenant Transaction details to Initiate Transaction
         /// </summary>
         /// <param name="tenantRoomExitDetails"></param>
+        /// <returns></returns>
+        //[UnAuthorize]
+        [EnableCors]
+        [HttpPost("InsertPaymentTransaction")]
+        public IActionResult InsertPaymentTransaction()
+        {
+            var response = _tenantProcessor.UpdatePaymentTransactionStatus();
+            if (response == null)
+                return BadRequest(new Exception("Request object is null."));
+
+            if (response.Code == ResponseCode.OK)
+            {
+                return Ok(response);
+            }
+            return BadRequest(response);
+        }
+
+        /// <summary>
+        /// Updates the tenant Transaction details from Payment
+        /// </summary>
+        /// <param name="data"></param>
         /// <returns></returns>
         //[UnAuthorize]
         [EnableCors]

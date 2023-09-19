@@ -7,7 +7,7 @@
                 nzPopoverPlacement="bottom"></span>
             </span>
             <button nz-button nzSize="default" nzType="link" 
-                (click)="makePayment()" *ngIf="!tenantData.isAmountPaid">Pay Bill Now</button>
+                (click)="makePayment(tenantData.totalAmount)" *ngIf="!tenantData.isAmountPaid">Pay Bill Now</button>
             <span *ngIf="tenantData.isAmountPaid">Paid</span>
         </nz-list-item>
         <ng-template #contentTemplate>

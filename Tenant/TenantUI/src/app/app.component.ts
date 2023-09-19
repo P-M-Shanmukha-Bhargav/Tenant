@@ -26,31 +26,35 @@ export class AppComponent {
     private message: NzMessageService, private router: Router,
     private notification: NzNotificationService, private authService: AuthService) {
       this.isUserLoggedIn = this.authService.isLoggedIn;
-      if(this.isUserLoggedIn && window.localStorage.getItem("user") !== 'null'){
-        this.displayName = this.authService.displayName;
-        if(JSON.parse(window.localStorage.getItem("userData")!).roles.isTenant){
-          this.router.navigate(["home"]);
-        }
-        else if(JSON.parse(window.localStorage.getItem("userData")!).roles.isOwner){
-          this.router.navigate(["dashboard"]);
-        }
-      }
-      else if(window.localStorage.getItem("user") !== 'null'){
-        this.authService.refreshToken()
-          .then((val) => { 
-            this.authService.saveReSession(val!); 
-            if(JSON.parse(window.localStorage.getItem("userData")!).roles.isTenant){
-              this.router.navigate(["home"]);
-            }
-            else if(JSON.parse(window.localStorage.getItem("userData")!).roles.isOwner){
-              this.router.navigate(["dashboard"]);
-            }
-            this.isUserLoggedIn = this.authService.isLoggedIn;
-          })
-      }
-      else{
-        this.authService.SignOut();
-      }
+      this.displayName = this.authService.displayName;
+      //window.alert(this.isUserLoggedIn);
+      //this.authService.displayName.then((val) => this.displayName = val?.displayName!);
+      // window.alert(this.displayName);
+      // if(this.isUserLoggedIn && window.localStorage.getItem("user") !== 'null'){
+      //   this.displayName = this.authService.displayName;
+      //   if(JSON.parse(window.localStorage.getItem("userData")!).userTypeId == 1){
+      //     this.router.navigate(["home"]);
+      //   }
+      //   else if(JSON.parse(window.localStorage.getItem("userData")!).userTypeId == 2){
+      //     this.router.navigate(["dashboard"]);
+      //   }
+      // }
+      // else if(window.localStorage.getItem("user") !== 'null'){
+      //   this.authService.refreshToken()
+      //     .then((val) => { 
+      //       this.authService.saveReSession(val!); 
+      //       if(JSON.parse(window.localStorage.getItem("userData")!).roles.isTenant){
+      //         this.router.navigate(["home"]);
+      //       }
+      //       else if(JSON.parse(window.localStorage.getItem("userData")!).roles.isOwner){
+      //         this.router.navigate(["dashboard"]);
+      //       }
+      //       this.isUserLoggedIn = this.authService.isLoggedIn;
+      //     })
+      // }
+      // else{
+      //   this.authService.SignOut();
+      // }
   }
 
   loginModal(): void {
@@ -89,7 +93,7 @@ export class AppComponent {
                     result.user?.getIdToken().then((token) => {
                       this.authService.saveReSession(token);
                       this.isUserLoggedIn = this.authService.isLoggedIn;
-                      this.displayName = this.authService.displayName;
+                      // this.displayName = this.authService.displayName;
                       this.router.navigate(["home"]);
                       signInModal.destroy();
                     });
@@ -154,7 +158,7 @@ export class AppComponent {
                         result.user?.getIdToken().then((token) => {
                           this.authService.saveReSession(token);
                           this.isUserLoggedIn = this.authService.isLoggedIn;
-                          this.displayName = this.authService.displayName;
+                          // this.displayName = this.authService.displayName;
                           // this.authService.SendVerificationMail();
                           this.router.navigate(["dashboard"]);
                           signUpModal.destroy();
@@ -183,10 +187,10 @@ export class AppComponent {
   }
 
   Home(){
-    if(JSON.parse(window.localStorage.getItem("userData")!).roles.isTenant){
+    if(JSON.parse(window.localStorage.getItem("userData")!).userTypeId == 1){
       this.router.navigate(["home"]);
     }
-    else if(JSON.parse(window.localStorage.getItem("userData")!).roles.isOwner){
+    else if(JSON.parse(window.localStorage.getItem("userData")!).userTypeId == 2){
       this.router.navigate(["dashboard"]);
     }
   }

@@ -7641,11 +7641,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\My Stuff\\Projects\\TenantApp\\Api\\TenantApp\\src\\Tenant.API\\Tenant.API.csproj",
+      "projectUniqueName": "C:\\My Stuff\\Projects\\Tenant\\Api\\TenantApp\\src\\Tenant.API\\Tenant.API.csproj",
       "projectName": "Tenant.API",
-      "projectPath": "C:\\My Stuff\\Projects\\TenantApp\\Api\\TenantApp\\src\\Tenant.API\\Tenant.API.csproj",
+      "projectPath": "C:\\My Stuff\\Projects\\Tenant\\Api\\TenantApp\\src\\Tenant.API\\Tenant.API.csproj",
       "packagesPath": "C:\\Users\\2049277\\.nuget\\packages\\",
-      "outputPath": "C:\\My Stuff\\Projects\\TenantApp\\Api\\TenantApp\\src\\Tenant.API\\obj\\",
+      "outputPath": "C:\\My Stuff\\Projects\\Tenant\\Api\\TenantApp\\src\\Tenant.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7668,8 +7668,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\My Stuff\\Projects\\TenantApp\\Api\\TenantApp\\src\\Tenant.Domain\\Tenant.Domain.csproj": {
-              "projectPath": "C:\\My Stuff\\Projects\\TenantApp\\Api\\TenantApp\\src\\Tenant.Domain\\Tenant.Domain.csproj"
+            "C:\\My Stuff\\Projects\\Tenant\\Api\\TenantApp\\src\\Tenant.Domain\\Tenant.Domain.csproj": {
+              "projectPath": "C:\\My Stuff\\Projects\\Tenant\\Api\\TenantApp\\src\\Tenant.Domain\\Tenant.Domain.csproj"
             }
           }
         }

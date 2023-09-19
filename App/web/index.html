@@ -55,5 +55,24 @@
       });
     });
   </script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js">. </script>
+
+  <script type="module">
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyClPZIpVrV7XkXwJ1dUSyEMuGTa_gkEpws",
+      authDomain: "tenantapp-dev.firebaseapp.com",
+      projectId: "tenantapp-dev",
+      storageBucket: "tenantapp-dev.appspot.com",
+      messagingSenderId: "113207441797",
+      appId: "1:113207441797:web:97733b7e20ec81e6d1ecec"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>
