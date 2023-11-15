@@ -70,29 +70,36 @@ namespace Tenant.Domain
             var trxUserDetails = _tenantRepository
                 .GetTenantTransactionByMonthYear(monthYear, userUid);
 
-            if (trxUserDetails.IsBillsOwnerControl && 
-                (trxUserDetails.PowerAmount > 0 || trxUserDetails.WaterAmount > 0))
+            var payment = new UpdateTenantStatus
             {
-                _tenantRepository.UpdateTransactionBillPaymentStatus(PaymentStatus.PAID, $"{DateTime.Now:MMM}", DateTime.Now.Year, data.amount);
-            }
-            else
+                month = $"{DateTime.Now:MMM}",
+                year = DateTime.Now.Year,
+            };
+
+            if (data.status == "success")
             {
-                if (data.status == "success")
+                if (trxUserDetails.IsBillsOwnerControl &&
+                    (trxUserDetails.PowerAmount > 0 || trxUserDetails.WaterAmount > 0) &&
+                    trxUserDetails.TotalAmount == Convert.ToDecimal(data.amount))
                 {
-                    var updated = _tenantRepository.UpdateTransactionBillPaymentStatus(PaymentStatus.PART, $"{DateTime.Now:MMM}", DateTime.Now.Year, data.amount);
+                    payment.paymentStatus = PaymentStatus.PAID;
+                    payment.pendingAmount = 0;
+
+                    _tenantRepository.UpdateTransactionBillPaymentStatus(payment);
+                }
+                else
+                {
+                    payment.paymentStatus = PaymentStatus.PART;
+                    payment.pendingAmount = trxUserDetails.TotalAmount - Convert.ToDecimal(data.amount);
+
+                    var updated = _tenantRepository.UpdateTransactionBillPaymentStatus(payment);
                     if (updated.HasValue && updated.Value)
                     {
                         _tenantRepository.InsertTransactionPayment(data);
                     }
                 }
-                else
-                {
-                    return new Response<string>("Failed");
-                }
             }
-
-
-            return new Response<string>("Success");
+            return new Response<string>("Failed");
         }
 
         #region Private Methods

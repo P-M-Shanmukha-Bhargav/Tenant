@@ -1,6 +1,7 @@
 ﻿CREATE PROCEDURE [TRX].[UpdateTeantTransactionBillPaymentStatus_V1]
 	@TenantId NVARCHAR(100),
 	@PaymentStatus NVARCHAR(100),
+	@PendingAmount DECIMAL(10,2),
 	@Month NVARCHAR(3),
 	@Year INT
 AS
@@ -36,7 +37,7 @@ BEGIN
 	BEGIN
 		UPDATE TB
 		SET PaymentStatusId = @StatusId, PaidOptionsId = 1,
-		UpdatedDate = GETDATE(), UpdatedBy = @TenantId
+		UpdatedDate = GETDATE(), UpdatedBy = @TenantId, PendingAmount = @PendingAmount
 		FROM TRX.TransactionBills TB
 		INNER JOIN TRX.TransactionAmount TA ON TB.TransactionAmountId = TA.TransactionAmountId
 		INNER JOIN ROM.TenantRoomDetails TRD ON TRD.TenantRoomDetailsId = TA.TenantRoomDetailsId

@@ -140,7 +140,7 @@ namespace Tenant.Data
             return resp;
         }
 
-        public bool? UpdateTransactionBillPaymentStatus(PaymentStatus paymentStatus, string month, int year, string paidAmount)
+        public bool? UpdateTransactionBillPaymentStatus(UpdateTenantStatus updateTenantStatus)
         {
             bool? resp = null;
             using (var connection = DbFactory.CreateConnection(_configuration.GetConnectionString(_configuration.GetSection("Environment").Value)))
@@ -148,9 +148,10 @@ namespace Tenant.Data
                 using (var command = connection.CreateCommand("[TRX].[UpdateTeantTransactionBillPaymentStatus_V1]"))
                 {
                     command.AddWithValue("@TenantId", _userId);
-                    command.AddWithValue("@PaymentStatus", paymentStatus.ToString());
-                    command.AddWithValue("@Month", month);
-                    command.AddWithValue("@Year", year);
+                    command.AddWithValue("@PaymentStatus", updateTenantStatus.paymentStatus.ToString());
+                    command.AddWithValue("@PendingAmount", updateTenantStatus.pendingAmount);
+                    command.AddWithValue("@Month", updateTenantStatus.month);
+                    command.AddWithValue("@Year", updateTenantStatus.year);
 
                     if (connection.State != ConnectionState.Open)
                         connection.Open();

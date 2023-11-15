@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KRCB6Sl+LPLMIiai634eKwU9ZzJO7OX12thMOy8m8z1Gkp0uiqlETfrjXkzw/NnQCerwyMT7l29KNc1VGR6b+g==",
+  "dgSpecHash": "HvMlDuTTHCq23oeeHItWvAQgri8LyCJvVOl81+PECgLRDk5u1FpsPMTiONxvyAF/hYgT+T/SnB+HdDk+jZ69Nw==",
   "success": true,
   "projectFilePath": "C:\\My Stuff\\Projects\\Tenant\\Api\\TenantApp\\src\\Tenant.Domain\\Tenant.Domain.csproj",
   "expectedPackageFiles": [

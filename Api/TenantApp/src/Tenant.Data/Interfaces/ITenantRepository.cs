@@ -12,7 +12,7 @@ namespace Tenant.Data.Interfaces
         TenantDashboard? GetTenantTransactionByMonthYear(string monthYear, string userUId = null);
 
         bool? UpdateExitDetailsForTenantRoomDetails();
-        bool? UpdateTransactionBillPaymentStatus(PaymentStatus paymentStatus, string month, int year, string paidAmount);
+        bool? UpdateTransactionBillPaymentStatus(UpdateTenantStatus updateTenantStatus);
         void InsertTransactionPayment(TenantPaymentResponse resp);
     }
 }
